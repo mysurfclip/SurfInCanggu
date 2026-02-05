@@ -52,7 +52,7 @@ export default function Hero() {
             {/* Contact Links */}
             <div className="flex flex-col gap-3 lg:gap-[13px]">
               {/* Get in Touch */}
-              <div className="border-t border-[rgba(44,77,72,0.1)] pt-4">
+              <div className="pt-4">
                 <div className="flex flex-col gap-4">
                   <div className="font-normal text-[12px] leading-[16px] text-[rgba(44,77,72,0.4)] tracking-[2.4px] uppercase">
                     Get in Touch
@@ -72,7 +72,7 @@ export default function Hero() {
               </div>
 
               {/* Get Your Clips */}
-              <div className="border-t border-[rgba(44,77,72,0.1)] pt-4">
+              <div className="pt-4">
                 <div className="flex flex-col gap-4">
                   <div className="font-normal text-[12px] leading-[16px] text-[rgba(44,77,72,0.4)] tracking-[2.4px] uppercase">
                     Get Your Clips
