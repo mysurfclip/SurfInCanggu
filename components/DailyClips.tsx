@@ -5,7 +5,7 @@ import { mockClips } from '@/lib/clipData';
 export default function DailyClips() {
   return (
     <section id="clips" className="w-full bg-[#fafaf8]">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[120px] py-12 sm:py-16 lg:py-[100px]">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-16 md:py-24 lg:py-32">
         
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-12 mb-10 lg:mb-[60px]">

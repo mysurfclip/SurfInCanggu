@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="w-full bg-[#fafaf8]">
+    <section className="w-full bg-[#fafaf8] pt-[90px] lg:pt-[110px]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[120px] py-8 sm:py-12 lg:py-[60px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 

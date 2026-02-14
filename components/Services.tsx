@@ -3,20 +3,20 @@ import Link from 'next/link';
 export default function Services() {
   return (
     <section id="services" className="w-full bg-[#fafaf8]">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[120px] py-12 sm:py-16 lg:py-[100px]">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-16 md:py-24 lg:py-32">
         
         {/* Section Header */}
-        <div className="flex flex-col gap-4 lg:gap-[25px] mb-12 lg:mb-[80px]">
+        <div className="flex flex-col gap-6 md:gap-8 mb-12 md:mb-16 lg:mb-20">
           <h2 className="font-['Costa_Brisa',sans-serif] italic text-[40px] sm:text-[56px] lg:text-[72px] leading-[1.2] text-[#2c4d48] tracking-[1.66px]">
             Everything you<br />need in Canggu
           </h2>
           <div className="bg-[#e49355] h-[1px] w-[96px]" />
         </div>
 
-        <div className="space-y-12 lg:space-y-20">
+        <div className="flex flex-col gap-12 md:gap-16 lg:gap-20">
           
           {/* Surf Clips */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 pb-12 lg:pb-20 border-b border-[rgba(44,77,72,0.1)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 pb-12 md:pb-16 lg:pb-20 border-b border-[rgba(44,77,72,0.1)]">
             <div>
               <h3 className="font-normal text-[28px] sm:text-[36px] lg:text-[48px] leading-[1.2] text-[#2c4d48] tracking-[-1.11px]">
                 Surf Clips

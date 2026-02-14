@@ -3,10 +3,10 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="w-full bg-[#fafaf8] border-t border-[rgba(44,77,72,0.1)]">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[120px] py-10 sm:py-12 lg:py-16">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-16 md:py-20 lg:py-24">
         
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10 lg:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-16 mb-12 md:mb-16">
           
           {/* Brand */}
           <div className="md:col-span-2 lg:col-span-1">
@@ -27,7 +27,7 @@ export default function Footer() {
             <h4 className="font-normal text-[12px] leading-[16px] text-[rgba(44,77,72,0.4)] tracking-[2.4px] uppercase mb-6">
               Quick Links
             </h4>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               <Link href="#clips" className="font-normal text-[14px] leading-[24px] text-[rgba(44,77,72,0.8)] hover:text-[#e49355] tracking-[-0.31px] transition-colors">
                 Daily Clips
               </Link>
