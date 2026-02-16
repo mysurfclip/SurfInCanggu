@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function OldmansBeach() {
   return (
@@ -41,7 +41,7 @@ export default function OldmansBeach() {
             <div className="space-y-8 max-w-[560px]">
               <p className="text-white/80 text-xl leading-relaxed">
                 For 12 years, Luqman has been stationed at Oldman's beach,
-                Canggu’s most iconic surf spot.
+                Canggu's most iconic surf spot.
               </p>
 
               <p className="text-white/60 leading-relaxed">
@@ -53,9 +53,12 @@ export default function OldmansBeach() {
 
             <Link
               href="#clips"
-              className="inline-flex items-center gap-3 text-white hover:text-[#e49355] transition-colors"
+              className="inline-flex items-center gap-3 text-white hover:text-[#e49355] transition-colors group"
             >
-              View Today’s Session →
+              <span>View Today's Session</span>
+              <svg className="group-hover:translate-x-1 transition-transform duration-300" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </Link>
 
           </div>
@@ -63,5 +66,5 @@ export default function OldmansBeach() {
         </div>
       </div>
     </section>
-  )
+  );
 }

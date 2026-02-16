@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import ClipCard from './ClipCard';
 import { mockClips } from '@/lib/clipData';
@@ -23,12 +25,12 @@ export default function DailyClips() {
               href="https://clipdays.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#2c4d48] hover:text-[#e49355] transition-colors"
+              className="inline-flex items-center gap-2 text-[#2c4d48] hover:text-[#e49355] transition-colors group"
             >
               <span className="font-normal text-[14px] leading-[24px] tracking-[-0.31px]">
                 Browse Clipdays
               </span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <svg className="group-hover:translate-x-1 transition-transform duration-300" width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
@@ -48,7 +50,7 @@ export default function DailyClips() {
             href="https://clipdays.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#2c4d48] hover:bg-[#3d5f5a] text-white px-8 py-4 rounded-full transition-colors"
+            className="inline-flex items-center gap-3 bg-[#2c4d48] hover:bg-[#3d5f5a] text-white px-8 py-4 rounded-full hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <span className="font-light text-[14px] tracking-[-0.15px]">Browse Full Library</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
