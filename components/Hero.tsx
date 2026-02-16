@@ -11,35 +11,25 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* Left Column - Text & Stats */}
-          <div 
-            className="flex flex-col gap-8 lg:gap-[50px] order-2 lg:order-1"
-          >
+          <div className="flex flex-col gap-8 lg:gap-[50px] order-1 lg:order-1">
 
             {/* Title */}
             <div className="flex flex-col gap-6 lg:gap-[30px]">
               <div className="overflow-hidden">
-                <h1 
-                  className="font-['Costa_Brisa',sans-serif] italic text-[52px] sm:text-[68px] lg:text-[96px] leading-[1.1] lg:leading-[92px] text-[#2c4d48] tracking-[1.98px]"
-                >
+                <h1 className="hero-fade-in hero-title-1 font-['Costa_Brisa',sans-serif] italic text-[52px] sm:text-[68px] lg:text-[96px] leading-[1.1] lg:leading-[92px] text-[#2c4d48] tracking-[1.98px]">
                   12 Years
                 </h1>
               </div>
               <div className="overflow-hidden">
-                <h1 
-                  className="font-['Costa_Brisa',sans-serif] italic text-[52px] sm:text-[68px] lg:text-[96px] leading-[1.1] lg:leading-[92px] text-[#2c4d48] tracking-[1.98px]"
-                >
+                <h1 className="hero-fade-in hero-title-2 font-['Costa_Brisa',sans-serif] italic text-[52px] sm:text-[68px] lg:text-[96px] leading-[1.1] lg:leading-[92px] text-[#2c4d48] tracking-[1.98px]">
                   Capturing Waves
                 </h1>
               </div>
-              <div 
-                className="bg-[#e49355] h-[2px] w-[96px] origin-left"
-              />
+              <div className="hero-line bg-[#e49355] h-[2px] w-[96px] origin-left" />
             </div>
 
             {/* Stats */}
-            <div 
-              className="border-t border-[rgba(44,77,72,0.1)] pt-10 lg:pt-[40px]"
-            >
+            <div className="hero-fade-in hero-stats border-t border-[rgba(44,77,72,0.1)] pt-10 lg:pt-[40px] order-3 lg:order-2">
               <div className="grid grid-cols-3 gap-8 lg:gap-12">
                 <div className="flex flex-col gap-3">
                   <div className="font-light text-[36px] sm:text-[44px] leading-[1.1] text-[#2c4d48] tracking-[0.37px]">
@@ -69,9 +59,7 @@ export default function Hero() {
             </div>
 
             {/* Contact Links */}
-            <div 
-              className="flex flex-col gap-6 lg:gap-8"
-            >
+            <div className="hero-fade-in hero-links flex flex-col gap-6 lg:gap-8 order-4 lg:order-3">
               {/* Get in Touch */}
               <div>
                 <div className="flex flex-col gap-5">
@@ -82,9 +70,8 @@ export default function Hero() {
                     href="#"
                     className="group flex items-center justify-between pb-3 border-b border-[rgba(44,77,72,0.15)] hover:border-[#e49355] transition-all duration-300 relative overflow-hidden"
                   >
-                    <span className="font-normal text-[15px] sm:text-[17px] leading-[24px] text-[#2c4d48] tracking-[-0.31px] relative">
+                    <span className="font-normal text-[15px] sm:text-[17px] leading-[24px] text-[#2c4d48] tracking-[-0.31px] relative link-underline">
                       WhatsApp
-                      <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#e49355] group-hover:w-full transition-all duration-300" />
                     </span>
                     <svg 
                       className="text-[rgba(44,77,72,0.4)] group-hover:text-[#e49355] group-hover:translate-x-1 transition-all duration-300" 
@@ -109,9 +96,8 @@ export default function Hero() {
                     href="#"
                     className="group flex items-center justify-between pb-3 border-b border-[rgba(44,77,72,0.15)] hover:border-[#e49355] transition-all duration-300 relative overflow-hidden"
                   >
-                    <span className="font-normal text-[15px] sm:text-[17px] leading-[24px] text-[#2c4d48] tracking-[-0.31px] relative">
+                    <span className="font-normal text-[15px] sm:text-[17px] leading-[24px] text-[#2c4d48] tracking-[-0.31px] relative link-underline">
                       View on ClipDays
-                      <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#e49355] group-hover:w-full transition-all duration-300" />
                     </span>
                     <svg 
                       className="text-[rgba(44,77,72,0.4)] group-hover:text-[#e49355] group-hover:translate-x-1 transition-all duration-300" 
@@ -129,12 +115,10 @@ export default function Hero() {
           </div>
 
           {/* Right Column - Image Card */}
-          <div className="order-1 lg:order-2 w-full max-w-[480px] lg:max-w-none mx-auto">
+          <div className="order-2 lg:order-2 w-full max-w-[480px] lg:max-w-none mx-auto">
             <div className="flex items-start gap-2 lg:gap-0">
               {/* Photographer Badge */}
-              <div 
-                className="hidden lg:flex flex-col items-center gap-2 bg-[#e49355] rounded-full px-2 py-4 shadow-lg"
-              >
+              <div className="hero-fade-in hero-badge hidden lg:flex flex-col items-center gap-2 bg-[#e49355] rounded-full px-2 py-4 shadow-lg">
                 <div className="flex items-center justify-center h-[163px] w-[15px]">
                   <div className="rotate-90 whitespace-nowrap">
                     <p className="font-medium text-[10px] leading-[15px] text-white tracking-[3.12px] uppercase">
@@ -147,22 +131,18 @@ export default function Hero() {
 
               {/* Image Card */}
               <div className="flex-1 lg:ml-0">
-                <div 
-                  className="relative w-full rounded-2xl overflow-hidden shadow-2xl"
-                >
+                <div className="hero-fade-in hero-image relative w-full rounded-2xl overflow-hidden shadow-2xl image-zoom-wrapper">
                   {/* Image */}
                   <div className="relative aspect-[389/436]">
                     <img
                       src="/images/sic-photographer-luqman.jpeg"
                       alt="Surfer at Oldman's Beach"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover image-zoom"
                     />
                     <div className="absolute inset-0 bg-gradient-to-br from-[rgba(228,147,85,0.08)] via-transparent to-[rgba(44,77,72,0.12)]" />
 
                     {/* Bottom Info Card */}
-                    <div 
-                      className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[rgba(44,77,72,0.95)] via-[rgba(44,77,72,0.7)] to-transparent px-6 sm:px-8 pt-10 pb-6 sm:pb-8 backdrop-blur-sm"
-                    >
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[rgba(44,77,72,0.95)] via-[rgba(44,77,72,0.7)] to-transparent px-6 sm:px-8 pt-10 pb-6 sm:pb-8 backdrop-blur-sm">
                       <div className="flex items-end justify-between mb-5 sm:mb-6">
                         <div>
                           <h3 className="font-light text-[22px] sm:text-[26px] leading-[32px] text-white tracking-[-0.53px]">
@@ -213,9 +193,7 @@ export default function Hero() {
                 </div>
 
                 {/* Description */}
-                <div 
-                  className="mt-6 lg:mt-[28px] max-w-[420px]"
-                >
+                <div className="hero-fade-in hero-description mt-6 lg:mt-[28px] max-w-[420px]">
                   <p className="font-normal text-[21px] sm:text-[25px] leading-[1.5] text-[#2c4d48] tracking-[0.07px] mb-5">
                     by Luqman at Oldman's beach.
                   </p>

@@ -3,7 +3,6 @@ import Hero from '@/components/Hero';
 import DailyClips from '@/components/DailyClips';
 import OldmansBeach from '@/components/OldmansBeach';
 import Services from '@/components/Services';
-import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       <DailyClips />
       <OldmansBeach />
       <Services />
-      <FinalCTA />
       <Footer />
     </main>
   );

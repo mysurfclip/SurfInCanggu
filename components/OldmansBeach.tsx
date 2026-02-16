@@ -12,7 +12,7 @@ export default function OldmansBeach() {
           {/* LEFT - Sticky Image */}
           <div className="relative">
             <div className="lg:sticky lg:top-32">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
+              <div className="reveal-image aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
                 <img
                   src="/images/oldmans-beach.svg"
                   alt="Oldman's Beach"
@@ -26,11 +26,11 @@ export default function OldmansBeach() {
           <div className="space-y-24">
 
             <div className="space-y-8">
-              <div className="uppercase tracking-[4px] text-white/40 text-sm">
+              <div className="reveal uppercase tracking-[4px] text-white/40 text-sm">
                 The Spot
               </div>
 
-              <h2 className="font-['Costa_Brisa',sans-serif] italic text-[72px] leading-[1.05] text-white">
+              <h2 className="reveal reveal-delay-1 font-['Costa_Brisa',sans-serif] italic text-[72px] leading-[1.05] text-white">
                 Oldman's Beach,<br />
                 Canggu
               </h2>
@@ -39,12 +39,12 @@ export default function OldmansBeach() {
             </div>
 
             <div className="space-y-8 max-w-[560px]">
-              <p className="text-white/80 text-xl leading-relaxed">
+              <p className="reveal reveal-delay-2 text-white/80 text-xl leading-relaxed">
                 For 12 years, Luqman has been stationed at Oldman's beach,
                 Canggu's most iconic surf spot.
               </p>
 
-              <p className="text-white/60 leading-relaxed">
+              <p className="reveal reveal-delay-3 text-white/60 leading-relaxed">
                 From dawn patrol to sunset sessions, every wave is captured
                 in crystal-clear HD. Whether you're a beginner or a pro,
                 your moment is preserved forever.
@@ -53,7 +53,7 @@ export default function OldmansBeach() {
 
             <Link
               href="#clips"
-              className="inline-flex items-center gap-3 text-white hover:text-[#e49355] transition-colors group"
+              className="reveal reveal-delay-4 inline-flex items-center gap-3 text-white hover:text-[#e49355] transition-colors group"
             >
               <span>View Today's Session</span>
               <svg className="group-hover:translate-x-1 transition-transform duration-300" width="16" height="16" viewBox="0 0 16 16" fill="none">
