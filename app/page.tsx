@@ -1,5 +1,5 @@
 import Header from '@/components/Header';
-import VideoIntro from '@/components/VideoIntro'; // 👈 add this
+import VideoIntro from '@/components/VideoIntro';
 import Hero from '@/components/Hero';
 import DailyClips from '@/components/DailyClips';
 import OldmansBeach from '@/components/OldmansBeach';
@@ -9,8 +9,8 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <main>
-      <Header />
-      <VideoIntro /> {/* 👈 add this line */}
+      {/* <Header /> */}
+      <VideoIntro />
       <Hero />
       <DailyClips />
       <OldmansBeach />
