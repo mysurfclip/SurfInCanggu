@@ -1,69 +1,100 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+import { useEffect, useState } from "react";
 
-export default function OldmansBeach() {
+const slides = [
+  {
+    title: "Oldman's Beach",
+    subtitle: "Canggu",
+    description:
+      "Luqman's home break. Consistent and iconic with 12 years of history.",
+    image: "/images/oldmans-beach.svg",
+  },
+  {
+    title: "Echo Beach",
+    subtitle: "Canggu",
+    description:
+      "Powerful reef break delivering punchy, hollow waves.",
+    image: "/images/echo.jpg",
+  },
+  {
+    title: "Pererenan",
+    subtitle: "Canggu",
+    description:
+      "Less crowded, scenic coastline with quality peaks.",
+    image: "/images/pererenan.jpg",
+  },
+];
+
+export default function SurfBreaksSlides() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const sectionHeight = typeof window !== "undefined"
+    ? window.innerHeight * slides.length
+    : 0;
+
   return (
-    <section className="relative bg-[#2c4d48] py-32">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px]">
+    <section
+      className="relative bg-primary-forest"
+      style={{ height: `${slides.length * 100}vh` }}
+    >
+      <div className="sticky top-0 h-screen overflow-hidden">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-
-          {/* LEFT - Sticky Image */}
-          <div className="relative">
-            <div className="lg:sticky lg:top-32">
-              <div className="reveal-image aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
-                <img
-                  src="/images/oldmans-beach.svg"
-                  alt="Oldman's Beach"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* RIGHT - Scrolling Content */}
-          <div className="space-y-24">
-
-            <div className="space-y-8">
-              <div className="reveal uppercase tracking-[4px] text-white/40 text-sm">
-                The Spot
-              </div>
-
-              <h2 className="reveal reveal-delay-1 font-['Costa_Brisa',sans-serif] italic text-[72px] leading-[1.05] text-white">
-                Oldman's Beach,<br />
-                Canggu
-              </h2>
-
-              <div className="w-24 h-[2px] bg-[#e49355]" />
-            </div>
-
-            <div className="space-y-8 max-w-[560px]">
-              <p className="reveal reveal-delay-2 text-white/80 text-xl leading-relaxed">
-                For 12 years, Luqman has been stationed at Oldman's beach,
-                Canggu's most iconic surf spot.
-              </p>
-
-              <p className="reveal reveal-delay-3 text-white/60 leading-relaxed">
-                From dawn patrol to sunset sessions, every wave is captured
-                in crystal-clear HD. Whether you're a beginner or a pro,
-                your moment is preserved forever.
-              </p>
-            </div>
-
-            <Link
-              href="#clips"
-              className="reveal reveal-delay-4 inline-flex items-center gap-3 text-white hover:text-[#e49355] transition-colors group"
+        {/* Sliding Container */}
+        <div
+          className="transition-transform duration-700 ease-out"
+          style={{
+            transform: `translateY(-${scrollY}px)`,
+          }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="h-screen flex items-center"
             >
-              <span>View Today's Session</span>
-              <svg className="group-hover:translate-x-1 transition-transform duration-300" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+              <div className="max-w-[1440px] mx-auto px-[24px] md:px-[60px] lg:px-[120px] w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
-          </div>
+                {/* Image */}
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
+                {/* Text */}
+                <div className="space-y-8">
+                  <div className="uppercase tracking-[4px] text-white/40 text-sm">
+                    The Spot
+                  </div>
+
+                  <h2 className="font-display text-hero md:text-hero-lg text-white leading-[1.05]">
+                    {slide.title},<br />
+                    {slide.subtitle}
+                  </h2>
+
+                  <div className="w-24 h-[2px] bg-accent-orange" />
+
+                  <p className="text-bodyLg text-white/80 max-w-[560px]">
+                    {slide.description}
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );

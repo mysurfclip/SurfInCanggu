@@ -6,57 +6,95 @@ import { mockClips } from '@/lib/clipData';
 
 export default function DailyClips() {
   return (
-    <section id="clips" className="w-full bg-[#fafaf8]">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-24 py-16 md:py-24 lg:py-32">
+    <section id="clips" className="w-full bg-neutral-cream">
+      <div className="mx-auto max-w-[1440px] px-[24px] md:px-[60px] lg:px-[120px] py-[60px] lg:py-[120px]">
         
-        {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-12 mb-10 lg:mb-[60px]">
-          <div className="flex flex-col gap-4 lg:gap-[25px]">
-            <h2 className="reveal font-['Costa_Brisa',sans-serif] italic text-[48px] sm:text-[64px] lg:text-[86px] leading-[1.2] lg:leading-[86px] text-[#2c4d48] tracking-[1.98px]">
+        {/* =========================
+            SECTION HEADER
+        ========================= */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12 mb-[60px]">
+
+          {/* Left */}
+          <div className="flex flex-col gap-6">
+            <h2 className="reveal font-display text-hero md:text-hero-lg text-primary-forest">
               Daily Clips
             </h2>
-            <div className="bg-[#e49355] h-[1px] w-[96px]" />
+
+            <div className="w-[96px] h-[1px] bg-accent-orange" />
           </div>
-          <div className="reveal reveal-delay-1 max-w-[387px]">
-            <p className="font-normal text-[14px] sm:text-[16px] leading-[1.625] text-[rgba(44,77,72,0.6)] tracking-[-0.31px] mb-4">
-              Every single wave recorded, available in stunning HD quality. Browse today's sessions and find your clips.
+
+          {/* Right */}
+          <div className="reveal reveal-delay-1 max-w-[420px]">
+            <p className="text-bodyBase text-neutral-textSecondary mb-6">
+              Every single wave recorded, available in stunning HD quality.
+              Browse today's sessions and find your clips.
             </p>
+
             <Link 
-              href="https://clipdays.com" 
+              href="https://clipdays.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[#2c4d48] hover:text-[#e49355] transition-colors group"
+              className="inline-flex items-center gap-2 text-primary-forest hover:text-accent-orange transition-colors group"
             >
-              <span className="font-normal text-[14px] leading-[24px] tracking-[-0.31px]">
+              <span className="text-bodySm">
                 Browse Clipdays
               </span>
-              <svg className="group-hover:translate-x-1 transition-transform duration-300" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+
+              <svg
+                className="group-hover:translate-x-1 transition-transform duration-300"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M3 8h10M8 3l5 5-5 5"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </Link>
           </div>
         </div>
 
-        {/* Clips Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-10 lg:mb-[60px]">
+        {/* =========================
+            CLIPS GRID
+        ========================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-[60px]">
           {mockClips.map((clip, index) => (
-            <div key={clip.id} className={`reveal reveal-delay-${Math.min(index + 1, 5)}`}>
+            <div
+              key={clip.id}
+              className={`reveal reveal-delay-${Math.min(index + 1, 5)}`}
+            >
               <ClipCard clip={clip} />
             </div>
           ))}
         </div>
 
-        {/* Browse Full Library Button */}
+        {/* =========================
+            CTA BUTTON
+        ========================= */}
         <div className="reveal reveal-delay-3 flex justify-center">
           <Link
             href="https://clipdays.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-hover inline-flex items-center gap-3 bg-[#2c4d48] hover:bg-[#3d5f5a] text-white px-8 py-4 rounded-full transition-all duration-300"
+            className="btn-hover inline-flex items-center gap-3 bg-primary-forest hover:bg-primary-forestHover text-white px-8 py-4 rounded-full"
           >
-            <span className="font-light text-[14px] tracking-[-0.15px]">Browse Full Library</span>
+            <span className="text-bodySm">
+              Browse Full Library
+            </span>
+
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M3 8h10M8 3l5 5-5 5"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </Link>
         </div>
