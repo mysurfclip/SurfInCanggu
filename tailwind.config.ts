@@ -5,8 +5,19 @@ const config: Config = {
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
   ],
+
   theme: {
+    container: {
+      center: true,
+      screens: {
+        xl: "1440px",
+      },
+    },
+
     extend: {
+      /* =========================
+         COLORS
+      ========================= */
       colors: {
         primary: {
           forest: "#2c4d48",
@@ -24,91 +35,124 @@ const config: Config = {
         },
       },
 
+      /* =========================
+         FONT FAMILY
+      ========================= */
       fontFamily: {
-        body: ["var(--font-inter)", "sans-serif"],
-        script: ["CostaBrisaScript", "serif"],
-        sans: ["CostaBrisaSans", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        display: ["Costa Brisa Sans", "sans-serif"],
         beckman: ["Beckman", "sans-serif"],
       },
 
-      fontSize: {
-        /* =========================
-           HERO DISPLAY
-        ========================= */
-        hero: ["48px", {
-          lineHeight: "1.1",
-          letterSpacing: "-0.02em",
-        }],
-        "hero-lg": ["96px", {
-          lineHeight: "1.1",
-          letterSpacing: "-0.02em",
-        }],
-
-        /* =========================
-           HEADINGS (BECKMAN)
-        ========================= */
-        h1: ["36px", {
-          lineHeight: "1.1",
-          letterSpacing: "-0.025em",
-        }],
-        "h1-lg": ["48px", {
-          lineHeight: "1.1",
-          letterSpacing: "-0.025em",
-        }],
-
-        h2: ["30px", {
-          lineHeight: "1.2",
-          letterSpacing: "-0.02em",
-        }],
-        "h2-lg": ["36px", {
-          lineHeight: "1.2",
-          letterSpacing: "-0.02em",
-        }],
-
-        h3: ["20px", {
-          lineHeight: "1.4",
-          letterSpacing: "-0.01em",
-        }],
-
-        h4: ["18px", {
-          lineHeight: "1.4",
-          letterSpacing: "-0.01em",
-        }],
-
-        /* =========================
-           BODY (INTER)
-        ========================= */
-        bodyLg: ["18px", {
-          lineHeight: "1.6",
-        }],
-        bodyLgDesktop: ["20px", {
-          lineHeight: "1.6",
-        }],
-
-        bodyBase: ["16px", {
-          lineHeight: "1.6",
-        }],
-
-        bodySm: ["14px", {
-          lineHeight: "1.5",
-        }],
-
-        caption: ["12px", {
-          lineHeight: "1.4",
-        }],
-
-        label: ["11px", {
-          lineHeight: "1.4",
-          letterSpacing: "0.2em",
-        }],
+      /* =========================
+         FONT WEIGHTS
+      ========================= */
+      fontWeight: {
+        regular: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
       },
 
+      /* =========================
+         TYPOGRAPHY SCALE
+      ========================= */
+      fontSize: {
+        /* HERO DISPLAY */
+        hero: [
+          "clamp(48px, 6vw, 72px)",
+          {
+            lineHeight: "1.1",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "hero-lg": [
+          "clamp(72px, 8vw, 96px)",
+          {
+            lineHeight: "1.1",
+            letterSpacing: "-0.02em",
+          },
+        ],
 
+        /* HEADINGS (BECKMAN) */
+        h1: [
+          "36px",
+          {
+            lineHeight: "1.1",
+            letterSpacing: "-0.025em",
+          },
+        ],
+        "h1-lg": [
+          "48px",
+          {
+            lineHeight: "1.1",
+            letterSpacing: "-0.025em",
+          },
+        ],
+
+        h2: [
+          "30px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+        "h2-lg": [
+          "36px",
+          {
+            lineHeight: "1.2",
+            letterSpacing: "-0.02em",
+          },
+        ],
+
+        h3: [
+          "20px",
+          {
+            lineHeight: "1.4",
+            letterSpacing: "-0.01em",
+          },
+        ],
+
+        h4: [
+          "18px",
+          {
+            lineHeight: "1.4",
+            letterSpacing: "-0.01em",
+          },
+        ],
+
+        /* BODY (INTER) */
+        bodyLg: ["18px", { lineHeight: "1.6" }],
+        bodyBase: ["16px", { lineHeight: "1.6" }],
+        bodySm: ["14px", { lineHeight: "1.5" }],
+        caption: ["12px", { lineHeight: "1.4" }],
+
+        label: [
+          "11px",
+          {
+            lineHeight: "1.4",
+            letterSpacing: "0.2em",
+          },
+        ],
+      },
+
+      /* =========================
+         SPACING SYSTEM
+      ========================= */
+      spacing: {
+        sectionX: "120px",   // desktop horizontal padding
+        sectionY: "60px",    // desktop vertical padding
+      },
+
+      /* =========================
+         SHADOWS
+      ========================= */
       boxShadow: {
         soft: "0 10px 40px rgba(44, 77, 72, 0.08)",
       },
     },
   },
+
   plugins: [],
 };
 

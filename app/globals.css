@@ -8,21 +8,13 @@
 
 /* Costa Brisa Script */
 @font-face {
-  font-family: "CostaBrisaScript";
-  src: url("/fonts/Costa Brisa/Costa Brisa Script.woff2") format("woff2");
+  font-family: "Costa Brisa Sans";
+  src: url("/fonts/costa-brisa/Costa Brisa Sans.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-/* Costa Brisa Sans */
-@font-face {
-  font-family: "CostaBrisaSans";
-  src: url("/fonts/Costa Brisa/Costa Brisa Sans.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* Optional Beckman (only if converted to woff2) */
 /*
