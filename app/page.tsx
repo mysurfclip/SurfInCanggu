@@ -3,9 +3,10 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import DailyClips from "@/components/DailyClips";
-import OldmansBeach from "@/components/OldmansBeach";
+import OldmansBeach from "@/components/SurfBreaksSection";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
+import SurfBreaksSection from "@/components/SurfBreaksSection";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Header />
       <Hero />
       <DailyClips />
-      <OldmansBeach />
+      <SurfBreaksSection />
       <Services />
       <Footer />
     </main>
