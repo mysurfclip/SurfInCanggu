@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   FONT FACE DEFINITIONS
+   ============================================ */
+
+/* Costa Brisa Script */
+@font-face {
+  font-family: "CostaBrisaScript";
+  src: url("/fonts/Costa Brisa/Costa Brisa Script.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Costa Brisa Sans */
+@font-face {
+  font-family: "CostaBrisaSans";
+  src: url("/fonts/Costa Brisa/Costa Brisa Sans.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Optional Beckman (only if converted to woff2) */
+/*
+@font-face {
+  font-family: "Beckman";
+  src: url("/fonts/Beckman/Beckman-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -11,13 +48,8 @@
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
-
     background-color: #fafaf8;
     color: #2c4d48;
-
     line-height: 1.6;
     font-feature-settings: "kern", "liga";
     letter-spacing: -0.01em;
@@ -37,6 +69,10 @@
   }
 }
 
+/* ============================================
+   UTILITIES
+   ============================================ */
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -44,10 +80,9 @@
 }
 
 /* ============================================
-   PREMIUM SCROLL REVEAL ANIMATIONS
+   SCROLL REVEAL ANIMATIONS
    ============================================ */
 
-/* Base reveal state - hidden before animation */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -55,13 +90,11 @@
               transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Visible state - triggered by Intersection Observer */
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Image reveal with scale */
 .reveal-image {
   opacity: 0;
   transform: scale(1.05);
@@ -74,29 +107,8 @@
   transform: scale(1);
 }
 
-/* Stagger delay variants for sequential reveals */
-.reveal-delay-1 {
-  transition-delay: 0.1s;
-}
-
-.reveal-delay-2 {
-  transition-delay: 0.2s;
-}
-
-.reveal-delay-3 {
-  transition-delay: 0.3s;
-}
-
-.reveal-delay-4 {
-  transition-delay: 0.4s;
-}
-
-.reveal-delay-5 {
-  transition-delay: 0.5s;
-}
-
 /* ============================================
-   HERO SECTION - PAGE LOAD ANIMATION
+   HERO LOAD ANIMATION
    ============================================ */
 
 .hero-fade-in {
@@ -112,51 +124,8 @@
   }
 }
 
-/* Stagger hero elements */
-.hero-title-1 {
-  animation-delay: 0.2s;
-}
-
-.hero-title-2 {
-  animation-delay: 0.35s;
-}
-
-.hero-line {
-  opacity: 0;
-  transform: scaleX(0);
-  transform-origin: left center;
-  animation: lineGrow 1s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
-}
-
-@keyframes lineGrow {
-  to {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-}
-
-.hero-stats {
-  animation-delay: 0.5s;
-}
-
-.hero-links {
-  animation-delay: 0.7s;
-}
-
-.hero-image {
-  animation-delay: 0.4s;
-}
-
-.hero-badge {
-  animation-delay: 0.6s;
-}
-
-.hero-description {
-  animation-delay: 0.9s;
-}
-
 /* ============================================
-   BUTTON HOVER EFFECTS
+   BUTTON EFFECT
    ============================================ */
 
 .btn-hover {
@@ -169,13 +138,8 @@
   box-shadow: 0 12px 24px rgba(44, 77, 72, 0.15);
 }
 
-.btn-hover:active {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(44, 77, 72, 0.1);
-}
-
 /* ============================================
-   CARD HOVER EFFECTS
+   CARD EFFECT
    ============================================ */
 
 .card-hover {
@@ -189,72 +153,15 @@
 }
 
 /* ============================================
-   SMOOTH IMAGE ZOOM ON HOVER
+   ACCESSIBILITY
    ============================================ */
 
-.image-zoom-wrapper {
-  overflow: hidden;
-}
-
-.image-zoom {
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.image-zoom-wrapper:hover .image-zoom {
-  transform: scale(1.05);
-}
-
-/* ============================================
-   LINK HOVER EFFECTS
-   ============================================ */
-
-.link-underline {
-  position: relative;
-}
-
-.link-underline::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #e49355;
-  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.link-underline:hover::after {
-  width: 100%;
-}
-
-/* ============================================
-   PERFORMANCE OPTIMIZATIONS
-   ============================================ */
-
-/* Use GPU acceleration for transforms */
-.reveal,
-.reveal-image,
-.hero-fade-in,
-.btn-hover,
-.card-hover,
-.image-zoom {
-  will-change: transform, opacity;
-}
-
-/* Remove will-change after animation completes */
-.reveal.active,
-.reveal-image.active {
-  will-change: auto;
-}
-
-/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-image,
   .hero-fade-in,
   .btn-hover,
-  .card-hover,
-  .image-zoom {
+  .card-hover {
     animation: none;
     transition: none;
     opacity: 1;
