@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import VideoIntro from '@/components/VideoIntro'; // 👈 add this
 import Hero from '@/components/Hero';
 import DailyClips from '@/components/DailyClips';
 import OldmansBeach from '@/components/OldmansBeach';
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main>
       <Header />
+      <VideoIntro /> {/* 👈 add this line */}
       <Hero />
       <DailyClips />
       <OldmansBeach />
