@@ -1,48 +1,48 @@
-export interface ClipData {
-  id: string;
-  title: string;
-  location: string;
-  time: string;
-  duration: string;
-  thumbnail: string;
-  clipdaysUrl: string;
-}
+import { Clip } from './types'
 
-export const mockClips: ClipData[] = [
+export const mockClips: Clip[] = [
   {
     id: '1',
     title: 'Morning Session',
     location: "Oldman's Beach",
-    time: '06:30 AM',
-    duration: '2:45',
-    thumbnail: '/images/clip-1.svg',
-    clipdaysUrl: 'https://clipdays.com/clip/1'
+    session: 'Clean',
+    time: '06:10 AM',
+    thumbnail: '/images/sample1.jpg',
+    videoUrl: '#',
+    duration: '2:34',
+    createdAt: '2024-01-20T06:10:00Z',
   },
   {
     id: '2',
     title: 'Perfect Barrel',
-    location: "Oldman's Beach",
-    time: '07:15 AM',
-    duration: '1:30',
-    thumbnail: '/images/clip-2.svg',
-    clipdaysUrl: 'https://clipdays.com/clip/2'
+    location: 'Echo Beach',
+    session: 'Pumping',
+    time: '07:45 AM',
+    thumbnail: '/images/sample2.jpg',
+    videoUrl: '#',
+    duration: '1:58',
+    createdAt: '2024-01-20T07:45:00Z',
   },
   {
     id: '3',
     title: 'Aerial Action',
-    location: "Oldman's Beach",
-    time: '08:00 AM',
-    duration: '3:20',
-    thumbnail: '/images/clip-3.svg',
-    clipdaysUrl: 'https://clipdays.com/clip/3'
+    location: 'Sandbar',
+    session: 'Fun',
+    time: '09:30 AM',
+    thumbnail: '/images/sample1.jpg',
+    videoUrl: '#',
+    duration: '3:12',
+    createdAt: '2024-01-20T09:30:00Z',
   },
   {
     id: '4',
     title: 'Sunset Rides',
-    location: "Oldman's Beach",
-    time: '05:45 PM',
-    duration: '2:15',
-    thumbnail: '/images/clip-4.svg',
-    clipdaysUrl: 'https://clipdays.com/clip/4'
+    location: 'Rivermouth',
+    session: 'Glassy',
+    time: '05:50 PM',
+    thumbnail: '/images/sample2.jpg',
+    videoUrl: '#',
+    duration: '2:20',
+    createdAt: '2024-01-20T17:50:00Z',
   }
-];
+]
