@@ -42,7 +42,7 @@ export default function SurfBreaksSection() {
   return (
     <section className="relative h-screen bg-primary-forest overflow-hidden">
 
-      {/* Slides wrapper */}
+      {/* Slides Wrapper */}
       <div
         className="flex h-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
@@ -55,10 +55,10 @@ export default function SurfBreaksSection() {
             key={index}
             className="w-screen h-screen flex items-center"
           >
-            <div className="max-w-[1440px] mx-auto px-[24px] md:px-[60px] lg:px-[120px] w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="container w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
               {/* Image */}
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_40px_120px_rgba(0,0,0,0.5)]">
+              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-premium">
                 <img
                   src={slide.image}
                   alt={slide.title}
@@ -72,7 +72,7 @@ export default function SurfBreaksSection() {
                   The Spot
                 </div>
 
-                <h2 className="font-display text-hero md:text-hero-lg text-white leading-[1.05]">
+                <h2 className="font-display text-hero-xl text-white leading-[1.05]">
                   {slide.title},<br />
                   {slide.subtitle}
                 </h2>
@@ -92,19 +92,86 @@ export default function SurfBreaksSection() {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-primary-forest transition-all duration-300"
+        className="
+          absolute
+          left-containerMobile
+          md:left-containerTablet
+          2xl:left-containerDesktop
+          top-1/2
+          -translate-y-1/2
+          w-12
+          h-12
+          rounded-full
+          border
+          border-white/30
+          text-white
+          flex
+          items-center
+          justify-center
+          hover:bg-white
+          hover:text-primary-forest
+          transition-all
+          duration-300
+        "
       >
-        ←
+        <svg
+          width="21"
+          height="21"
+          viewBox="0 0 21 21"
+          fill="none"
+          className="rotate-180"
+        >
+          <path
+            d="M3 10.1662H17.3323M17.3323 10.1662L10.1662 3M17.3323 10.1662L10.1662 17.3323"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-primary-forest transition-all duration-300"
+        className="
+          absolute
+          right-containerMobile
+          md:right-containerTablet
+          2xl:right-containerDesktop
+          top-1/2
+          -translate-y-1/2
+          w-12
+          h-12
+          rounded-full
+          border
+          border-white/30
+          text-white
+          flex
+          items-center
+          justify-center
+          hover:bg-white
+          hover:text-primary-forest
+          transition-all
+          duration-300
+        "
       >
-        →
+        <svg
+          width="21"
+          height="21"
+          viewBox="0 0 21 21"
+          fill="none"
+        >
+          <path
+            d="M3 10.1662H17.3323M17.3323 10.1662L10.1662 3M17.3323 10.1662L10.1662 17.3323"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
 
-      {/* Dots indicator */}
+      {/* Dots Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3">
         {slides.map((_, index) => (
           <div

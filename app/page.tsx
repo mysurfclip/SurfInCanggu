@@ -7,6 +7,8 @@ import OldmansBeach from "@/components/SurfBreaksSection";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
 import SurfBreaksSection from "@/components/SurfBreaksSection";
+import AboutSection from '@/components/AboutSection';
+
 
 export default function Home() {
   return (
@@ -16,6 +18,7 @@ export default function Home() {
       <DailyClips />
       <SurfBreaksSection />
       <Services />
+      <AboutSection />
       <Footer />
     </main>
   );

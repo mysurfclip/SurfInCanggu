@@ -43,7 +43,7 @@ const config: Config = {
           orange: "#e49355",
         },
         neutral: {
-          cream: "#fafaf8",
+          cream: "#EEE8DA",
           textPrimary: "#2c4d48",
           textSecondary: "rgba(44, 77, 72, 0.6)",
           textTertiary: "rgba(44, 77, 72, 0.4)",
@@ -84,7 +84,7 @@ const config: Config = {
           },
         ],
         "hero-xl": [
-          "clamp(72px, 8vw, 96px)",
+          "clamp(72px, 8vw, 112px)",
           {
             lineHeight: "1.1",
             letterSpacing: "-0.02em",
