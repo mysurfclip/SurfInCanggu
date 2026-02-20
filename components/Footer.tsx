@@ -1,57 +1,52 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className="w-full bg-[#2c4d48] text-white">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-10">
 
-        {/* Main Footer Content */}
-        <div className="py-20 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        {/* ================= MAIN CONTENT ================= */}
+        <div className="py-14 sm:py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr_1fr] gap-12 lg:gap-16">
 
-            {/* LEFT — Brand */}
-            <div className="flex flex-col gap-8 max-w-[420px]">
+            {/* ================= LEFT — BRAND ================= */}
+            <div className="flex flex-col gap-6">
 
-              {/* Logo */}
-              <div className="relative w-[320px] md:w-[380px]">
-                <Image
-                  src="/images/SIC_LOGO_SIC_LOGO_DRG.svg"
-                  alt="Surfing in Canggu"
-                  width={600}
-                  height={200}
-                  className="w-full h-auto object-contain"
-                  priority
-                />
-              </div>
+              <Image
+                src="/images/SIC_LOGO_SIC_LOGO_DRG.svg"
+                alt="Surfing in Canggu"
+                width={260}
+                height={120}
+                className="w-[200px] sm:w-[240px] h-auto"
+                priority
+              />
 
-              <div className="w-16 h-[2px] bg-[#e49355]" />
+              <div className="w-10 h-[2px] bg-[#e49355]" />
 
-              <p className="text-white/70 text-[16px] leading-[1.7]">
+              <p className="text-white/60 text-[14px] leading-[1.7] max-w-[420px]">
                 Luqman has been shooting surf sessions at Oldman's Beach in
                 Canggu for 12 years. Daily uploads to ClipDays, plus surf
                 lessons and travel photography across Bali.
               </p>
 
-              {/* Location Badge */}
-              <div className="inline-flex items-center gap-3 border border-white/20 rounded-full px-5 py-3 w-fit">
+              <div className="inline-flex items-center gap-3 border border-white/15 rounded-full px-4 py-2 w-fit">
                 <div className="w-2 h-2 rounded-full bg-[#e49355]" />
-                <span className="text-white/80 text-[14px]">
+                <span className="text-white/70 text-[13px]">
                   Oldman's Beach, Canggu
                 </span>
               </div>
             </div>
 
-            {/* MIDDLE — Services */}
-            <div className="flex flex-col gap-8">
-              <span className="text-white/40 text-[12px] tracking-[3px] uppercase">
+            {/* ================= SERVICES ================= */}
+            <div className="flex flex-col gap-6">
+              <span className="text-white/40 text-[11px] tracking-[3px] uppercase">
                 Services
               </span>
 
-              <div className="flex flex-col gap-6">
-
+              <div className="flex flex-col gap-5">
                 {[
                   { name: 'Surf Clips', href: '#clips' },
                   { name: 'Surf Lessons', href: '#services' },
@@ -60,71 +55,74 @@ export default function Footer() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="group flex items-center justify-between border-b border-white/10 pb-4 hover:border-white/30 transition-all duration-300"
+                    className="group flex justify-between items-center border-b border-white/10 pb-3 hover:border-white/30 transition"
                   >
-                    <span className="text-white/80 group-hover:text-white transition-colors duration-300">
+                    <span className="text-white/70 group-hover:text-white transition text-[14px]">
                       {item.name}
                     </span>
-
-                    <span className="text-white/40 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                    <span className="text-white/40 group-hover:text-white group-hover:translate-x-1 transition">
                       →
                     </span>
                   </Link>
                 ))}
-
               </div>
             </div>
 
-            {/* RIGHT — Connect */}
-            <div className="flex flex-col gap-8">
-              <span className="text-white/40 text-[12px] tracking-[3px] uppercase">
+            {/* ================= CONNECT ================= */}
+            <div className="flex flex-col gap-6">
+              <span className="text-white/40 text-[11px] tracking-[3px] uppercase">
                 Connect
               </span>
 
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
 
                 {/* WhatsApp */}
                 <Link
-                  href="https://wa.me/1234567890"
+                  href="https://wa.me/6285792835235"
                   target="_blank"
-                  className="group flex items-center justify-between border border-white/20 hover:border-white rounded-2xl px-6 py-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  rel="noopener noreferrer"
+                  className="group border border-white/15 hover:border-white rounded-xl px-5 py-4 transition"
                 >
-                  <div>
-                    <div className="text-white/40 text-[11px] uppercase tracking-[2px]">
-                      Message
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <div className="text-white/40 text-[10px] uppercase tracking-[2px]">
+                        Message
+                      </div>
+                      <div className="text-white text-[15px] mt-1">
+                        WhatsApp
+                      </div>
                     </div>
-                    <div className="text-white text-[18px] mt-1">
-                      WhatsApp
-                    </div>
+                    <span className="text-white/40 group-hover:text-white transition">
+                      →
+                    </span>
                   </div>
-
-                  <span className="text-white/40 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
                 </Link>
 
                 {/* Instagram */}
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/surfingincanggu/"
                   target="_blank"
-                  className="group flex items-center justify-between border border-white/20 hover:border-white rounded-2xl px-6 py-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  rel="noopener noreferrer"
+                  className="group border border-white/15 hover:border-white rounded-xl px-5 py-4 transition"
                 >
-                  <div>
-                    <div className="text-white/40 text-[11px] uppercase tracking-[2px]">
-                      Follow
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <div className="text-white/40 text-[10px] uppercase tracking-[2px]">
+                        Follow
+                      </div>
+                      <div className="text-white text-[15px] mt-1">
+                        Instagram
+                      </div>
                     </div>
-                    <div className="text-white text-[18px] mt-1">
-                      Instagram
-                    </div>
+                    <span className="text-white/40 group-hover:text-white transition">
+                      →
+                    </span>
                   </div>
-
-                  <span className="text-white/40 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
                 </Link>
 
               </div>
             </div>
+
           </div>
         </div>
 
@@ -132,19 +130,18 @@ export default function Footer() {
         <div className="border-t border-white/10" />
 
         {/* Bottom Bar */}
-        <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-white/50 text-[13px] tracking-[1px]">
-
+        <div className="py-6 flex flex-col items-center md:flex-row md:justify-between gap-3 text-white/40 text-[12px] text-center md:text-left">
           <div>© 2026 SURFING IN CANGGU</div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 flex-wrap justify-center md:justify-end">
             <span>Shot by Luqman</span>
             <div className="w-1 h-1 bg-white/30 rounded-full" />
             <span>Oldman's Beach</span>
             <div className="w-1 h-1 bg-white/30 rounded-full" />
             <span>Est. 2013</span>
           </div>
-
         </div>
+
       </div>
     </footer>
   );

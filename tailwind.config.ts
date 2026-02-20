@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -15,19 +16,7 @@ const config: Config = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1440px", // main design breakpoint
-    },
-
-    /* =========================
-       CONTAINER SYSTEM
-    ========================= */
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: "24px",
-        md: "60px",
-        "2xl": "120px",
-      },
+      "2xl": "1440px",
     },
 
     extend: {
@@ -45,9 +34,9 @@ const config: Config = {
         neutral: {
           cream: "#EEE8DA",
           textPrimary: "#2c4d48",
-          textSecondary: "rgba(44, 77, 72, 0.6)",
-          textTertiary: "rgba(44, 77, 72, 0.4)",
-          border: "rgba(44, 77, 72, 0.1)",
+          textSecondary: "rgba(44,77,72,0.6)",
+          textTertiary: "rgba(44,77,72,0.4)",
+          border: "rgba(44,77,72,0.1)",
         },
       },
 
@@ -61,42 +50,33 @@ const config: Config = {
       },
 
       /* =========================
-         FONT WEIGHTS
-      ========================= */
-      fontWeight: {
-        regular: "400",
-        medium: "500",
-        semibold: "600",
-        bold: "700",
-      },
-
-      /* =========================
          TYPOGRAPHY SCALE
       ========================= */
-
       fontSize: {
-        /* HERO DISPLAY */
         hero: [
-          "clamp(42px, 6vw, 72px)",
+          "clamp(48px, 6vw, 96px)",
           {
             lineHeight: "1.1",
             letterSpacing: "-0.02em",
-          },
-        ],
-        "hero-xl": [
-          "clamp(72px, 8vw, 112px)",
-          {
-            lineHeight: "1.1",
-            letterSpacing: "-0.02em",
+            fontWeight: "700",
           },
         ],
 
-        /* HEADINGS */
-        h1: [
-          "clamp(28px, 4vw, 48px)",
+        display: [
+          "clamp(40px, 5vw, 72px)",
           {
             lineHeight: "1.1",
-            letterSpacing: "-0.025em",
+            letterSpacing: "-0.02em",
+            fontWeight: "700",
+          },
+        ],
+
+        h1: [
+          "clamp(32px, 4vw, 56px)",
+          {
+            lineHeight: "1.15",
+            letterSpacing: "-0.02em",
+            fontWeight: "600",
           },
         ],
 
@@ -104,7 +84,8 @@ const config: Config = {
           "clamp(24px, 3vw, 36px)",
           {
             lineHeight: "1.2",
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.015em",
+            fontWeight: "600",
           },
         ],
 
@@ -113,6 +94,7 @@ const config: Config = {
           {
             lineHeight: "1.4",
             letterSpacing: "-0.01em",
+            fontWeight: "500",
           },
         ],
 
@@ -121,37 +103,50 @@ const config: Config = {
           {
             lineHeight: "1.4",
             letterSpacing: "-0.01em",
+            fontWeight: "500",
           },
         ],
 
-        /* BODY */
         bodyLg: [
-          "clamp(16px, 1.2vw, 20px)",
-          { lineHeight: "1.6" },
+          "clamp(18px, 1.2vw, 22px)",
+          {
+            lineHeight: "1.6",
+            fontWeight: "400",
+          },
         ],
 
-        bodyBase: ["16px", { lineHeight: "1.6" }],
-        bodySm: ["14px", { lineHeight: "1.5" }],
-        caption: ["12px", { lineHeight: "1.4" }],
+        bodyBase: [
+          "16px",
+          {
+            lineHeight: "1.6",
+            fontWeight: "400",
+          },
+        ],
+
+        bodySm: [
+          "14px",
+          {
+            lineHeight: "1.5",
+            fontWeight: "400",
+          },
+        ],
+
+        caption: [
+          "12px",
+          {
+            lineHeight: "1.4",
+            fontWeight: "400",
+          },
+        ],
 
         label: [
           "11px",
           {
             lineHeight: "1.4",
             letterSpacing: "0.2em",
+            fontWeight: "500",
           },
         ],
-      },
-
-      /* =========================
-         SPACING SYSTEM
-      ========================= */
-      spacing: {
-        sectionYMobile: "60px",
-        sectionYDesktop: "120px",
-        containerMobile: "24px",
-        containerTablet: "60px",
-        containerDesktop: "120px",
       },
 
       /* =========================
@@ -178,7 +173,67 @@ const config: Config = {
     },
   },
 
-  plugins: [],
+  /* =========================
+     GLOBAL SECTION SYSTEM
+  ========================= */
+  plugins: [
+    plugin(({ addComponents }) => {
+      addComponents({
+        /* Main section wrapper */
+        ".section-wrap": {
+          maxWidth: "1440px",
+          marginLeft: "auto",
+          marginRight: "auto",
+
+          /* 375px — default mobile */
+          paddingLeft: "15px",
+          paddingRight: "15px",
+          paddingTop: "20px",
+          paddingBottom: "20px",
+
+          /* 640px — sm: padding Figma 35px kiri/kanan, 40px atas/bawah */
+          "@screen sm": {
+            paddingLeft: "35px",
+            paddingRight: "35px",
+            paddingTop: "40px",
+            paddingBottom: "40px",
+          },
+
+          /* 768px — md */
+          "@screen md": {
+            paddingLeft: "35px",
+            paddingRight: "35px",
+            paddingTop: "40px",
+            paddingBottom: "40px",
+          },
+
+          /* 1024px — lg */
+          "@screen lg": {
+            paddingLeft: "80px",
+            paddingRight: "80px",
+            paddingTop: "40px",
+            paddingBottom: "40px",
+          },
+
+          /* 1280px — xl */
+          "@screen xl": {
+            paddingLeft: "100px",
+            paddingRight: "100px",
+            paddingTop: "60px",
+            paddingBottom: "60px",
+          },
+
+          /* 1440px — 2xl */
+          "@screen 2xl": {
+            paddingLeft: "120px",
+            paddingRight: "120px",
+            paddingTop: "60px",
+            paddingBottom: "60px",
+          },
+        },
+      });
+    }),
+  ],
 };
 
 export default config;

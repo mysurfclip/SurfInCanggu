@@ -4,10 +4,10 @@ import { useState } from "react";
 
 const slides = [
   {
-    name: "Old Man’s",
-    title: "Old Man’s Beach Canggu",
+    name: "Old Man's",
+    title: "Old Man's Beach Canggu",
     description:
-      "For 12 years, Luqman has been stationed at Old Man’s Beach, Canggu’s most beloved surf spot.",
+      "For 12 years, Luqman has been stationed at Old Man's Beach, Canggu's most beloved surf spot.",
     highlights: [
       "Perfect Coverage — Every peak, every moment.",
       "Daily Uploads — Sessions available within 48 hours.",
@@ -42,8 +42,7 @@ const slides = [
   {
     name: "Sandbar",
     title: "Sandbar Canggu",
-    description:
-      "Perfect when conditions align. Fun, playful and photogenic.",
+    description: "Perfect when conditions align. Fun, playful and photogenic.",
     highlights: ["Fun Conditions", "Photo Friendly", "Consistent Peaks"],
     image: "/images/sample1.jpg",
   },
@@ -52,172 +51,171 @@ const slides = [
 export default function SurfBreaksSection() {
   const [current, setCurrent] = useState<number>(0);
 
-  const next = () =>
-    setCurrent((prev) => (prev + 1) % slides.length);
-
+  const next = () => setCurrent((prev) => (prev + 1) % slides.length);
   const prev = () =>
-    setCurrent((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 
   const activeSlide = slides[current];
 
   return (
-    <section className="bg-[#2C4D48] text-white py-16 md:py-20 lg:py-24 px-4 sm:px-8 lg:px-20 xl:px-28">
-
-      <div className="max-w-[1440px] mx-auto flex flex-col gap-16">
+    <section
+      className="bg-primary-forest text-white"
+      aria-labelledby="surf-breaks-title"
+    >
+      <div className="section-wrap max-w-[1440px] mx-auto flex flex-col gap-8 sm:gap-12 md:gap-16">
 
         {/* ================= HEADER ================= */}
-        <div className="text-center space-y-6">
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
+        <header className="text-center space-y-4 md:space-y-6">
+          <h2
+            id="surf-breaks-title"
+            className="font-display text-3xl sm:text-4xl md:text-6xl xl:text-7xl"
+          >
             Canggu Surf Breaks
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-8 text-white/60 text-sm tracking-wide">
-            {slides.map((slide, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrent(index)}
-                className={`transition ${
-                  current === index
-                    ? "text-[#E49355]"
-                    : "hover:text-white"
-                }`}
-              >
-                {slide.name}
-              </button>
-            ))}
-          </div>
-        </div>
+          {/* Nav tabs — scroll horizontal di mobile, wrap di sm+ */}
+          <nav aria-label="Surf breaks">
+            <ul className="
+              flex justify-start sm:justify-center
+              gap-4 sm:gap-6 md:gap-8
+              overflow-x-auto sm:flex-wrap
+              text-white/60 text-xs sm:text-sm tracking-wide
+              pb-1 sm:pb-0
+              px-1 sm:px-0
+              scrollbar-none
+            ">
+              {slides.map((slide, index) => (
+                <li key={index} className="shrink-0 sm:shrink">
+                  <button
+                    type="button"
+                    onClick={() => setCurrent(index)}
+                    className={`transition whitespace-nowrap ${
+                      current === index ? "text-[#E49355]" : "hover:text-white"
+                    }`}
+                    aria-current={current === index ? "true" : undefined}
+                    aria-label={`Go to ${slide.name}`}
+                  >
+                    {slide.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </header>
 
         {/* ================= MAIN CONTENT ================= */}
-        <div className="relative flex items-center justify-center">
+        <main className="flex justify-center items-center w-full">
+          <div className="w-full max-w-[1200px] flex flex-col md:flex-row items-center gap-8 md:gap-10">
 
-          {/* ARROWS DESKTOP */}
-          <button
-            onClick={prev}
-            className="hidden lg:flex absolute -left-6 w-14 h-14 rounded-full border border-[#E49355] items-center justify-center text-[#E49355] hover:bg-[#E49355] hover:text-[#2C4D48] transition"
-          >
-            ←
-          </button>
-
-          <button
-            onClick={next}
-            className="hidden lg:flex absolute -right-6 w-14 h-14 rounded-full border border-[#E49355] items-center justify-center text-[#E49355] hover:bg-[#E49355] hover:text-[#2C4D48] transition"
-          >
-            →
-          </button>
-
-          <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-center w-full max-w-[1100px]">
+            {/* LEFT ARROW — desktop only */}
+            <button
+              onClick={prev}
+              aria-label="Previous slide"
+              className="hidden lg:flex w-[40px] h-[40px] rounded-full border-2 border-accent-orange items-center justify-center text-accent-orange shrink-0"
+            >
+              ←
+            </button>
 
             {/* IMAGE */}
-            <div className="flex justify-center">
-              <div className="w-full max-w-[420px] aspect-[4/5] rounded-[20px] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.25)]">
-                <img
-                  src={activeSlide.image}
-                  alt={activeSlide.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="
+              w-full
+              md:w-[45%]
+              lg:w-[550px]
+              h-[40vh] sm:h-[45vh]
+              md:h-[55vh]
+              lg:h-[65vh]
+              max-h-[680px]
+              rounded-xl2
+              overflow-hidden
+              shadow-soft
+            ">
+              <img
+                src={activeSlide.image}
+                alt={activeSlide.title}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* TEXT */}
-            <div className="space-y-8 max-w-[500px]">
+            <div className="
+              w-full
+              md:w-[55%]
+              lg:w-[470px]
+              flex flex-col
+              gap-5 sm:gap-6 md:gap-8 lg:gap-10
+              text-center md:text-left
+            ">
 
-              <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl font-semibold leading-tight">
+              {/* Title + divider */}
+              <div className="flex flex-col gap-2.5 items-center md:items-start">
+                <h3 className="font-beckman text-xl sm:text-2xl md:text-3xl lg:text-[36px] leading-tight">
                   {activeSlide.title}
                 </h3>
-                <div className="w-20 h-[3px] bg-[#E49355]" />
+                <div className="w-20 sm:w-28 md:w-36 h-[3px] bg-accent-orange" />
               </div>
 
-              <p className="text-white/70 leading-relaxed">
-                {activeSlide.description}
-              </p>
+              {/* Description + highlights */}
+              <div className="flex flex-col gap-4 md:gap-5">
+                <p className="text-neutral-cream text-sm leading-relaxed">
+                  {activeSlide.description}
+                </p>
 
-              <div className="space-y-3 text-white/70">
-                {activeSlide.highlights.map((item, i) => (
-                  <div key={i} className="flex gap-3">
-                    <div className="w-4 h-[2px] bg-[#E49355] mt-2" />
-                    <span>{item}</span>
-                  </div>
-                ))}
+                <div className="flex flex-col gap-2">
+                  {activeSlide.highlights.map((item, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-2 justify-center md:justify-start"
+                    >
+                      <div className="w-4 h-[2px] bg-accent-orange shrink-0 mt-[10px]" />
+                      <span className="text-neutral-cream text-sm leading-relaxed text-left">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <button className="flex items-center gap-2 text-white border-b border-white/30 pb-1 hover:text-[#E49355] transition">
-                View Today’s Session
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+              {/* CTA */}
+              <button className="w-fit border-b border-white/20 pb-1 text-sm hover:text-accent-orange transition mx-auto md:mx-0">
+                View Today's Session →
               </button>
 
             </div>
+
+            {/* RIGHT ARROW — desktop only */}
+            <button
+              onClick={next}
+              aria-label="Next slide"
+              className="hidden lg:flex w-[40px] h-[40px] rounded-full border-2 border-accent-orange items-center justify-center text-accent-orange shrink-0"
+            >
+              →
+            </button>
+
           </div>
-        </div>
+        </main>
 
         {/* MOBILE ARROWS */}
-        <div className="flex justify-center gap-6 lg:hidden">
-          <button onClick={prev} className="w-12 h-12 rounded-full border border-[#E49355] text-[#E49355]">←</button>
-          <button onClick={next} className="w-12 h-12 rounded-full border border-[#E49355] text-[#E49355]">→</button>
-        </div>
-
-        {/* ================= BREAK LIST ================= */}
-        <div className="border-t border-white/15 pt-10 grid sm:grid-cols-2 gap-x-12 gap-y-8">
-
-          {slides.map((slide, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={`group text-left transition ${
-                current === index
-                  ? "opacity-100"
-                  : "opacity-50 hover:opacity-100"
-              }`}
-            >
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-
-                <div>
-                  <h4 className="text-lg font-medium group-hover:text-[#E49355] transition">
-                    {slide.title}
-                  </h4>
-
-                  <p className="uppercase tracking-[3px] text-xs text-white/40 mt-2">
-                    {slide.name}
-                  </p>
-                </div>
-
-                <span className="flex items-center gap-2 text-sm group-hover:text-[#E49355] transition">
-                  Watch
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </span>
-
-              </div>
-            </button>
-          ))}
-
-        </div>
+        <nav
+          aria-label="Carousel controls"
+          className="flex justify-center gap-5 lg:hidden"
+        >
+          <button
+            type="button"
+            onClick={prev}
+            className="w-11 h-11 rounded-full border border-[#E49355] text-[#E49355] text-sm"
+            aria-label="Previous slide"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            className="w-11 h-11 rounded-full border border-[#E49355] text-[#E49355] text-sm"
+            aria-label="Next slide"
+          >
+            →
+          </button>
+        </nav>
 
       </div>
     </section>

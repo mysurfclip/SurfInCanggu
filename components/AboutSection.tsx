@@ -5,166 +5,195 @@ import Link from 'next/link';
 
 export default function AboutSection() {
   return (
-    <section className="w-full bg-neutral-cream">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 py-20 lg:py-28">
+    <section
+      id="about"
+      className="w-full bg-neutral-cream"
+      aria-labelledby="about-heading"
+    >
+      <div className="section-wrap">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/*
+          <640px  : 1 kolom — heading → card → teks → links
+          640px   : 1 kolom — card full width → heading → teks → links
+          768px+  : 2 kolom — teks kiri | card kanan
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center">
 
-          {/* LEFT CONTENT */}
-          <div className="space-y-12">
+          {/* ================= LEFT CONTENT ================= */}
+          <div className="space-y-8 sm:space-y-10">
 
-            {/* Headline */}
-            <div className="space-y-6">
-              <h2 className="font-['Costa_Brisa'] text-[48px] sm:text-[64px] lg:text-[86px] leading-[1] tracking-wide text-[#2c4d48]">
+            {/* Heading */}
+            <header className="space-y-6">
+              <h2
+                id="about-heading"
+                className="font-display text-hero text-primary-forest leading-[1]"
+              >
                 12 Years <br />Capturing Waves
               </h2>
+              <div className="w-32 h-[3px] bg-accent-orange" />
+            </header>
 
-              <div className="w-24 h-[2px] bg-[#e49355]" />
+            {/* 
+              Image Card — mobile & sm (< 768px)
+              <640px : W 305px H 545px
+              640px  : full width (mengisi kolom minus badge ~32px), H 641px
+            */}
+            <div className="block md:hidden w-full">
+              <div className="flex items-start">
+
+                {/* Badge */}
+                <div className="w-8 shrink-0 px-2 py-4 bg-accent-orange rounded-full shadow-[0px_8px_10px_-6px_rgba(0,0,0,0.10)] flex flex-col justify-start items-center gap-2">
+                  <div className="h-40 flex items-center justify-center">
+                    <span className="rotate-90 text-white text-[10px] font-medium uppercase leading-4 tracking-[3.12px] whitespace-nowrap">
+                      Your Photographer
+                    </span>
+                  </div>
+                  <div className="w-1 h-1 bg-white/80 opacity-50 rounded-full" />
+                </div>
+
+                {/* Card */}
+                <div className="
+                  relative rounded-2xl overflow-hidden shadow-premium
+                  w-[305px] h-[545px]
+                  sm:flex-1 sm:w-auto sm:h-[641px]
+                ">
+                  <Image
+                    src="/images/sic-photographer-luqman.jpeg"
+                    alt="Luqman - Surf Photographer"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-forest/90 via-primary-forest/50 to-transparent" />
+                  <div className="absolute bottom-0 left-0 w-full px-5 pt-8 pb-6 text-white space-y-6">
+                    <div className="flex justify-between items-end">
+                      <div>
+                        <div className="text-2xl font-light leading-8">Luqman</div>
+                        <div className="text-xs uppercase tracking-[3.6px] text-white/60">Est. 2013</div>
+                      </div>
+                      <div className="w-12 h-12 rounded-full outline outline-[0.56px] outline-white/20 flex items-center justify-center">📷</div>
+                    </div>
+                    <div className="border-t border-white/10 pt-4 flex justify-between items-center text-white">
+                      <div className="flex items-end gap-2 shrink-0">
+                        <span className="text-xl font-light">12</span>
+                        <span className="text-[10px] uppercase tracking-wide text-white/50">Years</span>
+                      </div>
+                      <div className="w-px h-3 bg-white/20 mx-2" />
+                      <div className="flex items-end gap-2 shrink-0">
+                        <span className="text-xl font-light">∞</span>
+                        <span className="text-[10px] uppercase tracking-wide text-white/50">Waves</span>
+                      </div>
+                      <div className="w-px h-3 bg-white/20 mx-2" />
+                      <div className="flex items-end gap-2 shrink-0">
+                        <span className="text-xl font-light">01</span>
+                        <span className="text-[10px] uppercase tracking-wide text-white/50">Beach</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
-            {/* Stats */}
-            <div className="border-t border-[#2c4d48]/10 pt-10 grid grid-cols-3 gap-8">
-
-              <div>
-                <div className="text-[36px] font-light text-[#2c4d48]">
-                  12+
-                </div>
-                <div className="text-xs uppercase tracking-[2px] text-[#2c4d48]/50 mt-1">
-                  Years
-                </div>
-              </div>
-
-              <div>
-                <div className="text-[36px] font-light text-[#2c4d48]">
-                  365
-                </div>
-                <div className="text-xs uppercase tracking-[2px] text-[#2c4d48]/50 mt-1">
-                  Days
-                </div>
-              </div>
-
-              <div>
-                <div className="text-[36px] font-light text-[#2c4d48]">
-                  HD
-                </div>
-                <div className="text-xs uppercase tracking-[2px] text-[#2c4d48]/50 mt-1">
-                  Quality
-                </div>
-              </div>
-
-            </div>
-
-            {/* Contact Links */}
-            <div className="space-y-6 pt-6">
-
-              <div className="pt-6">
-                <div className="text-xs uppercase tracking-[3px] text-[#2c4d48]/40 mb-3">
-                  Get in Touch
-                </div>
-
-                <Link
-                  href="#contact"
-                  className="flex justify-between items-center border-b border-[#2c4d48]/20 pb-3 group hover:text-[#e49355] transition-colors duration-300"
-                >
-                  <span>WhatsApp</span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">
-                    →
-                  </span>
-                </Link>
-              </div>
-
-              <div className="pt-6">
-                <div className="text-xs uppercase tracking-[3px] text-[#2c4d48]/40 mb-3">
-                  Get Your Clips
-                </div>
-
-                <Link
-                  href="#clips"
-                  className="flex justify-between items-center border-b border-[#2c4d48]/20 pb-3 group hover:text-[#e49355] transition-colors duration-300"
-                >
-                  <span>View on ClipDays</span>
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">
-                    →
-                  </span>
-                </Link>
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* RIGHT CARD */}
-          <div className="space-y-8">
-
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-
-              <Image
-                src="/images/sic-photographer-luqman.jpeg"
-                alt="Luqman - Surf Photographer"
-                width={600}
-                height={800}
-                className="w-full h-auto object-cover"
-                priority
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2c4d48]/80 via-[#2c4d48]/40 to-transparent" />
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 p-8 text-white space-y-4">
-
-                <div>
-                  <div className="text-2xl font-light">
-                    Luqman
-                  </div>
-                  <div className="text-xs uppercase tracking-[3px] text-white/60">
-                    Est. 2013
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-6 pt-4 border-t border-white/20 text-sm">
-
-                  <div>
-                    <span className="text-white font-light text-lg">12</span>{' '}
-                    <span className="text-white/60 text-xs uppercase">Years</span>
-                  </div>
-
-                  <div className="w-px h-4 bg-white/30" />
-
-                  <div>
-                    <span className="text-white font-light text-lg">∞</span>{' '}
-                    <span className="text-white/60 text-xs uppercase">Waves</span>
-                  </div>
-
-                  <div className="w-px h-4 bg-white/30" />
-
-                  <div>
-                    <span className="text-white font-light text-lg">01</span>{' '}
-                    <span className="text-white/60 text-xs uppercase">Beach</span>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <div>
-              <div className="text-2xl text-[#2c4d48]">
+            {/* Teks */}
+            <div className="space-y-4">
+              <h3 className="text-h2 text-primary-forest">
                 by Luqman at Oldman's beach.
-              </div>
-
-              <p className="mt-4 text-[#2c4d48]/70 leading-relaxed">
+              </h3>
+              <p className="text-bodyBase text-neutral-textSecondary leading-relaxed">
                 Every session, every wave, captured and uploaded daily to
                 ClipDays. With over a decade of experience at this iconic break,
                 Luqman knows exactly when and where to be.
               </p>
             </div>
 
+            {/* Links */}
+            <div className="space-y-10 pt-2">
+              <div>
+                <div className="text-label text-neutral-textTertiary mb-4">Get in Touch</div>
+                <Link
+                  href="https://wa.me/6285792835235"
+                  className="flex justify-between items-center border-b border-neutral-border pb-3 text-primary-forest hover:text-accent-orange transition"
+                >
+                  <span className="text-bodyBase">WhatsApp</span>
+                  <span>→</span>
+                </Link>
+              </div>
+              <div>
+                <div className="text-label text-neutral-textTertiary mb-4">Get Your Clips</div>
+                <Link
+                  href="#clips"
+                  className="flex justify-between items-center border-b border-neutral-border pb-3 text-primary-forest hover:text-accent-orange transition"
+                >
+                  <span className="text-bodyBase">View on ClipDays</span>
+                  <span>→</span>
+                </Link>
+              </div>
+            </div>
+
+          </div>
+
+          {/* ================= RIGHT IMAGE CARD — desktop (>=768px) ================= */}
+          <div className="hidden md:flex items-start">
+
+            {/* Badge */}
+            <div className="w-8 shrink-0 px-2 py-4 bg-accent-orange rounded-full shadow-[0px_8px_10px_-6px_rgba(0,0,0,0.10)] flex flex-col justify-start items-center gap-2">
+              <div className="h-40 flex items-center justify-center">
+                <span className="rotate-90 text-white text-[10px] font-medium uppercase leading-4 tracking-[3.12px] whitespace-nowrap">
+                  Your Photographer
+                </span>
+              </div>
+              <div className="w-1 h-1 bg-white/80 opacity-50 rounded-full" />
+            </div>
+
+            {/*
+              768px–1279px : W 328px H 641px
+              1280px+      : W 468px H 713px
+              1440px       : W 468px H 713px
+            */}
+            <div className="
+              relative rounded-2xl overflow-hidden shadow-premium
+              w-[328px] h-[641px]
+              xl:w-[468px] xl:h-[713px]
+            ">
+              <Image
+                src="/images/sic-photographer-luqman.jpeg"
+                alt="Luqman - Surf Photographer"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-forest/90 via-primary-forest/50 to-transparent" />
+              <div className="absolute bottom-0 left-0 w-full px-5 pt-8 pb-6 text-white space-y-6">
+                <div className="flex justify-between items-end">
+                  <div>
+                    <div className="text-2xl font-light leading-8">Luqman</div>
+                    <div className="text-xs uppercase tracking-[3.6px] text-white/60">Est. 2013</div>
+                  </div>
+                  <div className="w-12 h-12 rounded-full outline outline-[0.56px] outline-white/20 flex items-center justify-center">📷</div>
+                </div>
+                <div className="border-t border-white/10 pt-4 flex justify-between items-center text-white">
+                  <div className="flex items-end gap-2">
+                    <span className="text-xl font-light">12</span>
+                    <span className="text-[10px] uppercase tracking-wide text-white/50">Years</span>
+                  </div>
+                  <div className="w-px h-3 bg-white/20" />
+                  <div className="flex items-end gap-2">
+                    <span className="text-xl font-light">∞</span>
+                    <span className="text-[10px] uppercase tracking-wide text-white/50">Waves</span>
+                  </div>
+                  <div className="w-px h-3 bg-white/20" />
+                  <div className="flex items-end gap-2">
+                    <span className="text-xl font-light">01</span>
+                    <span className="text-[10px] uppercase tracking-wide text-white/50">Beach</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
-
       </div>
     </section>
   );
