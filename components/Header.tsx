@@ -13,10 +13,8 @@ export default function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Background change logic (your existing behavior)
       setScrolled(currentScrollY > window.innerHeight * 0.7);
 
-      // Hide on scroll down, show on scroll up
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setShowHeader(false);
       } else {
@@ -36,32 +34,43 @@ export default function Header() {
         fixed top-0 left-0 w-full z-50
         transition-all duration-500
         ${showHeader ? "translate-y-0" : "-translate-y-full"}
-        ${scrolled
-          ? "bg-[#fafaf8]/95 backdrop-blur-md border-b border-[rgba(44,77,72,0.1)]"
-          : "bg-transparent"
+        ${
+          scrolled
+            ? "bg-[#fafaf8]/95 backdrop-blur-md border-b border-[rgba(44,77,72,0.1)]"
+            : "bg-transparent"
         }
       `}
     >
-      <div className="max-w-[1440px] mx-auto px-6 py-4">
+      <div className="container mx-auto py-10">
         <nav className="flex items-center justify-between h-[70px]">
 
           {/* Logo */}
           <img
             src="/images/sic-logo.png"
             alt="Surfing Logo"
-            className="w-[140px] object-contain"
+            className="
+              w-[110px]
+              sm:w-[120px]
+              lg:w-[140px]
+              xl:w-[150px]
+              object-contain
+            "
           />
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10 xl:gap-14">
             {["Daily Clips", "About", "Services", "Contact"].map((item) => (
               <a
                 key={item}
                 href="#"
-                className={`text-sm transition-colors ${scrolled
-                  ? "text-[#2c4d48] hover:text-[#e49355]"
-                  : "text-white hover:text-[#e49355]"
-                  }`}
+                className={`
+                  text-sm tracking-wide transition-colors
+                  ${
+                    scrolled
+                      ? "text-[#2c4d48] hover:text-[#e49355]"
+                      : "text-white hover:text-[#e49355]"
+                  }
+                `}
               >
                 {item}
               </a>
@@ -71,18 +80,19 @@ export default function Header() {
           {/* CTA */}
           <button
             className={`
-    hidden lg:flex items-center gap-2.5
-    px-6 py-2.5
-    rounded-full
-    transition-all duration-300
-    group
-    ${scrolled
-                ? "bg-primary-forest text-white hover:bg-[#3d5f5a]"
-                : "bg-white text-primary-forest hover:bg-primary-forest hover:text-white"
+              hidden lg:flex items-center gap-2.5
+              px-6 py-2.5
+              rounded-full
+              transition-all duration-300
+              group
+              ${
+                scrolled
+                  ? "bg-primary-forest text-white hover:bg-[#3d5f5a]"
+                  : "bg-white text-primary-forest hover:bg-primary-forest hover:text-white"
               }
-  `}
+            `}
           >
-            <span className="font-body text-bodySm transition-transform duration-300 group-hover:-translate-x-1">
+            <span className="transition-transform duration-300 group-hover:-translate-x-1">
               Get Your Clips
             </span>
 
@@ -103,11 +113,12 @@ export default function Header() {
             </svg>
           </button>
 
-
-
-          {/* Mobile */}
+          {/* Mobile Button */}
           <button
-            className="lg:hidden text-white"
+            className={`
+              lg:hidden transition-colors
+              ${scrolled ? "text-[#2c4d48]" : "text-white"}
+            `}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden">
 
       {/* Background Video */}
       <video
@@ -20,55 +20,52 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-end">
-        <div className="
-          container
-          px-6 md:px-sectionX
-          pt-[80px] md:pt-[100px]
-          pb-12 md:pb-[60px]
-        ">
+      <div className="relative z-10 flex min-h-screen items-end">
+        <div className="container pb-16 md:pb-20">
 
           {/* Label */}
           <p className="text-caption tracking-[2px] text-white/60 uppercase mb-6">
             Start Today
           </p>
 
-          <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 lg:gap-16">
 
             {/* Left Content */}
-            <div>
-              <h1 className="font-display text-hero md:text-hero-lg text-white mb-2">
+            <div className="max-w-[700px]">
+
+              <h1 className="font-display text-hero md:text-hero-lg text-white leading-[1.05]">
                 Ready to see
               </h1>
 
-              <h1 className="font-display text-hero md:text-hero-lg text-accent-orange mb-10">
+              <h1 className="font-display text-hero md:text-hero-lg text-accent-orange leading-[1.05] mt-2 md:mt-3">
                 your waves?
               </h1>
-              <Link
-                href="#clips"
-                className="
-                  inline-flex items-center gap-3
-                  border border-white/30
-                  px-8 py-4
-                  rounded-full
-                  text-white
-                  transition-all duration-300
-                  hover:bg-white hover:text-primary-forest
-                "
-              >
-                <span className="font-body text-bodyBase">
-                  Get Your Clips
-                </span>
-                →
-              </Link>
+
+              <div className="mt-8 md:mt-10">
+                <Link
+                  href="#clips"
+                  className="
+                    inline-flex items-center gap-3
+                    border border-white/30
+                    px-8 py-4
+                    rounded-full
+                    text-white
+                    transition-all duration-300
+                    hover:bg-white hover:text-primary-forest
+                  "
+                >
+                  <span className="font-body text-bodyBase">
+                    Get Your Clips
+                  </span>
+                  →
+                </Link>
+              </div>
             </div>
 
             {/* Stats */}
-            <div className="flex items-end gap-10 lg:pb-6">
+            <div className="flex items-end gap-10 md:gap-14 lg:pb-4">
               <Stat number="12+" label="Years" />
-              <Divider />
               <Stat number="365" label="Days" />
-              <Divider />
               <Stat number="HD" label="Quality" />
             </div>
 
@@ -86,20 +83,12 @@ export default function Hero() {
 function Stat({ number, label }: { number: string; label: string }) {
   return (
     <div className="flex flex-col">
-      <div className="font-beckman text-white text-h2 md:text-h2-lg font-semibold">
+      <div className="font-beckman text-white text-h2 md:text-h2-lg font-semibold leading-none">
         {number}
       </div>
-      <div className="font-body text-label text-white/40 uppercase">
+      <div className="font-body text-label text-white/40 uppercase mt-2">
         {label}
       </div>
     </div>
   );
-}
-
-/* =========================
-   DIVIDER
-========================= */
-
-function Divider() {
-  return <div className="w-[1px] h-12 bg-white/20" />;
 }
