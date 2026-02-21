@@ -11,18 +11,10 @@ export default function AboutSection() {
       aria-labelledby="about-heading"
     >
       <div className="section-wrap">
-
-        {/*
-          <640px  : 1 kolom — heading → card → teks → links
-          640px   : 1 kolom — card full width → heading → teks → links
-          768px+  : 2 kolom — teks kiri | card kanan
-        */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 lg:gap-16 items-center">
 
           {/* ================= LEFT CONTENT ================= */}
           <div className="space-y-8 sm:space-y-10">
-
-            {/* Heading */}
             <header className="space-y-6">
               <h2
                 id="about-heading"
@@ -33,15 +25,9 @@ export default function AboutSection() {
               <div className="w-32 h-[3px] bg-accent-orange" />
             </header>
 
-            {/* 
-              Image Card — mobile & sm (< 768px)
-              <640px : W 305px H 545px
-              640px  : full width (mengisi kolom minus badge ~32px), H 641px
-            */}
+            {/* Mobile image card */}
             <div className="block md:hidden w-full">
               <div className="flex items-start">
-
-                {/* Badge */}
                 <div className="w-8 shrink-0 px-2 py-4 bg-accent-orange rounded-full shadow-[0px_8px_10px_-6px_rgba(0,0,0,0.10)] flex flex-col justify-start items-center gap-2">
                   <div className="h-40 flex items-center justify-center">
                     <span className="rotate-90 text-white text-[10px] font-medium uppercase leading-4 tracking-[3.12px] whitespace-nowrap">
@@ -50,17 +36,12 @@ export default function AboutSection() {
                   </div>
                   <div className="w-1 h-1 bg-white/80 opacity-50 rounded-full" />
                 </div>
-
-                {/* Card */}
-                <div className="
-                  relative rounded-2xl overflow-hidden shadow-premium
-                  w-[305px] h-[545px]
-                  sm:flex-1 sm:w-auto sm:h-[641px]
-                ">
+                <div className="relative rounded-2xl overflow-hidden shadow-premium w-[305px] h-[545px] sm:flex-1 sm:w-auto sm:h-[641px]">
                   <Image
                     src="/images/sic-photographer-luqman.jpeg"
                     alt="Luqman - Surf Photographer"
                     fill
+                    sizes="(max-width: 640px) 305px, (max-width: 768px) calc(100vw - 64px)"
                     className="object-cover object-top"
                     priority
                   />
@@ -91,11 +72,9 @@ export default function AboutSection() {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
 
-            {/* Teks */}
             <div className="space-y-4">
               <h3 className="text-h2 text-primary-forest">
                 by Luqman at Oldman's beach.
@@ -107,7 +86,6 @@ export default function AboutSection() {
               </p>
             </div>
 
-            {/* Links */}
             <div className="space-y-10 pt-2">
               <div>
                 <div className="text-label text-neutral-textTertiary mb-4">Get in Touch</div>
@@ -130,13 +108,10 @@ export default function AboutSection() {
                 </Link>
               </div>
             </div>
-
           </div>
 
-          {/* ================= RIGHT IMAGE CARD — desktop (>=768px) ================= */}
+          {/* ================= RIGHT IMAGE CARD — desktop ================= */}
           <div className="hidden md:flex items-start">
-
-            {/* Badge */}
             <div className="w-8 shrink-0 px-2 py-4 bg-accent-orange rounded-full shadow-[0px_8px_10px_-6px_rgba(0,0,0,0.10)] flex flex-col justify-start items-center gap-2">
               <div className="h-40 flex items-center justify-center">
                 <span className="rotate-90 text-white text-[10px] font-medium uppercase leading-4 tracking-[3.12px] whitespace-nowrap">
@@ -145,21 +120,12 @@ export default function AboutSection() {
               </div>
               <div className="w-1 h-1 bg-white/80 opacity-50 rounded-full" />
             </div>
-
-            {/*
-              768px–1279px : W 328px H 641px
-              1280px+      : W 468px H 713px
-              1440px       : W 468px H 713px
-            */}
-            <div className="
-              relative rounded-2xl overflow-hidden shadow-premium
-              w-[328px] h-[641px]
-              xl:w-[468px] xl:h-[713px]
-            ">
+            <div className="relative rounded-2xl overflow-hidden shadow-premium w-[328px] h-[641px] xl:w-[468px] xl:h-[713px]">
               <Image
                 src="/images/sic-photographer-luqman.jpeg"
                 alt="Luqman - Surf Photographer"
                 fill
+                sizes="(max-width: 1280px) 328px, 468px"
                 className="object-cover object-top"
                 priority
               />
@@ -190,7 +156,6 @@ export default function AboutSection() {
                 </div>
               </div>
             </div>
-
           </div>
 
         </div>

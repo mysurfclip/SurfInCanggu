@@ -75,7 +75,7 @@ function SpotPill({
     <motion.button
       onClick={onClick}
       animate={{
-        backgroundColor: active ? '#2c4d48' : 'transparent',
+        backgroundColor: active ? '#2c4d48' : 'rgba(0,0,0,0)',
         borderColor: active ? '#2c4d48' : 'rgba(44,77,72,0.2)',
         color: active ? '#ffffff' : 'rgba(44,77,72,0.7)',
       }}
@@ -223,7 +223,7 @@ function CTAButton() {
       className="px-8 py-3 rounded-full border border-primary-forest flex items-center gap-4"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      animate={{ backgroundColor: hovered ? '#2c4d48' : 'transparent' }}
+      animate={{ backgroundColor: hovered ? '#2c4d48' : 'rgba(0,0,0,0)' }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
     >
       <motion.span
