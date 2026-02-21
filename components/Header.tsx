@@ -33,7 +33,7 @@ export default function Header() {
     if (!showHeader) setIsMenuOpen(false);
   }, [showHeader]);
 
-  const navLinks = ["Daily Clips", "About", "Services", "Contact"];
+  const navLinks = ["Live Updates", "About", "Services", "Contact"];
 
   return (
     <header
