@@ -260,7 +260,7 @@ function CTAButton() {
   );
 }
 
-export default function DailyClips() {
+export default function LiveUpdates() {
   const [activeSpot, setActiveSpot] = useState<string | null>(null);
 
   // Filter cards — null = show all
@@ -275,8 +275,8 @@ export default function DailyClips() {
 
   return (
     <section
-      id="clips"
-      className="bg-neutral-cream overflow-hidden"
+      id="live-updates"
+      className="bg-neutral-cream overflow-hidden scroll-mt-24"
       aria-labelledby="daily-clips-heading"
     >
       <div className="section-wrap">
