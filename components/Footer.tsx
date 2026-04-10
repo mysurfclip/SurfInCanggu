@@ -15,14 +15,14 @@ export default function Footer() {
             {/* ================= LEFT — BRAND ================= */}
             <div className="flex flex-col gap-6">
 
-              <Image
-                src="/images/SIC_LOGO_SIC_LOGO_DRG.svg"
-                alt="Surfing in Canggu"
-                width={260}
-                height={120}
-                className="w-[200px] sm:w-[240px] h-auto"
-                priority
-              />
+             <Image
+  src="/images/sic-logo2.png"
+  alt="Surfing in Canggu"
+  width={260}
+  height={120}
+  className="w-[200px] sm:w-[240px] h-auto object-contain"
+  priority
+/>
 
               <div className="w-10 h-[2px] bg-[#e49355]" />
 
