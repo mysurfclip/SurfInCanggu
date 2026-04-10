@@ -141,7 +141,7 @@ export default function LiveUpdates() {
       setMetadata(data);
       setError(null);
     } catch {
-      setError('Tidak dapat memuat data kondisi ombak.');
+      setError('Cannot Load Wave Conditions.');
     } finally {
       setLoading(false);
     }
@@ -156,8 +156,10 @@ export default function LiveUpdates() {
   const spots = metadata?.spots || [];
   const videos = metadata?.videos || {};
   const spotsWithVideo = spots.filter(s => videos[s.code]).length;
-  const filteredSpots = activeFilter ? spots.filter(s => s.code === activeFilter) : spots;
-
+const filteredSpots = activeFilter 
+  ? spots.filter(s => s.code === activeFilter) 
+  : spots.filter(s => videos[s.code]);
+  
   return (
     <section id="live-updates" className="bg-neutral-cream overflow-hidden scroll-mt-24" aria-labelledby="daily-clips-heading">
       <div className="section-wrap">
@@ -252,7 +254,7 @@ export default function LiveUpdates() {
           {loading && (
             <div className="flex items-center gap-3 text-[#2c4d48]/50 py-12">
               <div className="w-5 h-5 border-2 border-[#2c4d48]/20 border-t-[#2c4d48] rounded-full animate-spin" />
-              <span className="text-sm">Loading kondisi ombak...</span>
+              <span className="text-sm">Loading Wave Conditions...</span>
             </div>
           )}
 
