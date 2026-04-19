@@ -48,7 +48,7 @@ function SpotCard({ spot, video }: { spot: Spot; video: SpotVideo | null }) {
       <div className="relative aspect-[16/10] overflow-hidden bg-[#1a2e2b]">
         {video ? (
           playing ? (
-            <video src={video.url} autoPlay controls playsInline className="w-full h-full object-contain" />
+            <video src={video.url} autoPlay controls muted playsInline className="w-full h-full object-contain" />
           ) : (
             <>
               <motion.video
@@ -211,7 +211,7 @@ const filteredSpots = activeFilter
                   </div>
                 )}
 
-                {!loading && spots.length > 0 && (
+                {/* {!loading && spots.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     <motion.button
                       onClick={() => setActiveFilter(null)}
@@ -244,7 +244,7 @@ const filteredSpots = activeFilter
                       </motion.button>
                     ))}
                   </div>
-                )}
+                )} */}
               </motion.div>
             </div>
           </motion.div>
