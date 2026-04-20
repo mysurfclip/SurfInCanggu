@@ -24,11 +24,11 @@ const slides = [
     image: "/images/sample2.jpg",
   },
   {
-    name: "Pererenan",
-    title: "Pererenan Canggu",
+    name: "Batu Bolong",
+    title: "Batu Bolong Beach",
     description:
-      "Less crowded coastline with consistent peaks and beautiful scenery.",
-    highlights: ["Clean Lines", "Longer Rides", "Balanced Crowd"],
+      "A lively surf spot with easy waves, beachfront cafés, and a vibrant sunset scene.",
+    highlights: ["Smooth Waves", "Beginner Friendly", "Social Vibes"],
     image: "/images/sample1.jpg",
   },
   {
