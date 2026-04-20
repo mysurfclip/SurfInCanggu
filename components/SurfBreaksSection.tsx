@@ -4,6 +4,14 @@ import { useState } from "react";
 
 const slides = [
   {
+    name: "Batu Bolong",
+    title: "Batu Bolong Beach",
+    description:
+      "A lively surf spot with easy waves, beachfront cafés, and a vibrant sunset scene.",
+    highlights: ["Smooth Waves", "Beginner Friendly", "Social Vibes"],
+    image: "/images/sample1.jpg",
+  },
+  {
     name: "Old Man's",
     title: "Old Man's Beach Canggu",
     description:
@@ -24,11 +32,10 @@ const slides = [
     image: "/images/sample2.jpg",
   },
   {
-    name: "Batu Bolong",
-    title: "Batu Bolong Beach",
-    description:
-      "A lively surf spot with easy waves, beachfront cafés, and a vibrant sunset scene.",
-    highlights: ["Smooth Waves", "Beginner Friendly", "Social Vibes"],
+    name: "Sandbar",
+    title: "Sandbar Canggu",
+    description: "Perfect when conditions align. Fun, playful and photogenic.",
+    highlights: ["Fun Conditions", "Photo Friendly", "Consistent Peaks"],
     image: "/images/sample1.jpg",
   },
   {
@@ -38,13 +45,6 @@ const slides = [
       "A dynamic shifting break offering powerful sections during solid swell.",
     highlights: ["Heavy Drops", "Fast Walls", "Advanced Only"],
     image: "/images/sample2.jpg",
-  },
-  {
-    name: "Sandbar",
-    title: "Sandbar Canggu",
-    description: "Perfect when conditions align. Fun, playful and photogenic.",
-    highlights: ["Fun Conditions", "Photo Friendly", "Consistent Peaks"],
-    image: "/images/sample1.jpg",
   },
 ];
 
