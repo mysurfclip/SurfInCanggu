@@ -9,7 +9,7 @@ const slides = [
   description:
     "A mellow longboard wave, popular with stylish surfers and a strong female lineup.",
   highlights: ["Longboard Spot", "Smooth Waves", "Stylish Rides"],
-  image: "/images/spot-1.jpg",
+  image: "/images/batubolong.jpg",
 },
 {
   name: "Old Man's",
