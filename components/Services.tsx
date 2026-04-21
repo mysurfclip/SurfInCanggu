@@ -64,7 +64,7 @@ export default function Services() {
                 "
               >
                 <img
-                  src="/images/sample1.jpg"
+                  src="/images/Surf-4.jpg"
                   alt="Surf clip example 1"
                   className="w-full h-full object-cover transition-transform duration-500 lg:group-hover:scale-105"
                 />
@@ -85,7 +85,7 @@ export default function Services() {
                 "
               >
                 <img
-                  src="/images/sample2.jpg"
+                  src="/images/surf-3.jpg"
                   alt="Surf clip example 2"
                   className="w-full h-full object-cover transition-transform duration-500 lg:group-hover:scale-105"
                 />
@@ -105,7 +105,7 @@ export default function Services() {
                 "
               >
                 <img
-                  src="/images/sample1.jpg"
+                  src="/images/surf-1.jpg"
                   alt="Surf clip example 3"
                   className="w-full h-full object-cover transition-transform duration-500 lg:group-hover:scale-110"
                 />
@@ -194,7 +194,7 @@ export default function Services() {
 
             <figure className="order-1 lg:order-2 overflow-hidden rounded-3xl shadow-soft w-full max-w-[520px] mx-auto lg:mx-0">
               <img
-                src="/images/sample1.jpg"
+                src="/images/surf-5.jpg"
                 alt="Surf lesson session"
                 className="w-full h-full object-cover transition-transform duration-500 lg:hover:scale-105"
               />
@@ -209,7 +209,7 @@ export default function Services() {
 
             <figure className="overflow-hidden rounded-3xl shadow-soft w-full max-w-[520px] mx-auto lg:mx-0">
               <img
-                src="/images/sample1.jpg"
+                src="/images/travel.jpg"
                 alt="Travel photo and video project"
                 className="w-full h-full object-cover transition-transform duration-500 lg:hover:scale-105"
               />

@@ -9,7 +9,7 @@ const slides = [
     description:
       "A lively surf spot with easy waves, beachfront cafés, and a vibrant sunset scene.",
     highlights: ["Smooth Waves", "Beginner Friendly", "Social Vibes"],
-    image: "/images/sample1.jpg",
+    image: "/images/spot-1.jpg",
   },
   {
     name: "Old Man's",
@@ -21,7 +21,7 @@ const slides = [
       "Daily Uploads — Sessions available within 48 hours.",
       "HD Quality — Professional videography & framing.",
     ],
-    image: "/images/sample1.jpg",
+    image: "/images/spot-3.jpg",
   },
   {
     name: "Echo Beach",
@@ -29,14 +29,14 @@ const slides = [
     description:
       "A powerful reef break delivering punchy, hollow waves and stunning sunsets.",
     highlights: ["Barrel Sections", "Advanced Surfer Spot", "Sunset Sessions"],
-    image: "/images/sample2.jpg",
+    image: "/images/spot-4.jpg",
   },
   {
     name: "Sandbar",
     title: "Sandbar Canggu",
     description: "Perfect when conditions align. Fun, playful and photogenic.",
     highlights: ["Fun Conditions", "Photo Friendly", "Consistent Peaks"],
-    image: "/images/sample1.jpg",
+    image: "/images/spot-5.jpg",
   },
   {
     name: "Rivermouth",
@@ -44,7 +44,7 @@ const slides = [
     description:
       "A dynamic shifting break offering powerful sections during solid swell.",
     highlights: ["Heavy Drops", "Fast Walls", "Advanced Only"],
-    image: "/images/sample2.jpg",
+    image: "/images/spot-2.jpg",
   },
 ];
 
