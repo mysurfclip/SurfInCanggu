@@ -4,48 +4,49 @@ import { useState } from "react";
 
 const slides = [
   {
-    name: "Batu Bolong",
-    title: "Batu Bolong Beach",
-    description:
-      "A lively surf spot with easy waves, beachfront cafés, and a vibrant sunset scene.",
-    highlights: ["Smooth Waves", "Beginner Friendly", "Social Vibes"],
-    image: "/images/spot-1.jpg",
-  },
-  {
-    name: "Old Man's",
-    title: "Old Man's Beach Canggu",
-    description:
-      "For 12 years, Luqman has been stationed at Old Man's Beach, Canggu's most beloved surf spot.",
-    highlights: [
-      "Perfect Coverage — Every peak, every moment.",
-      "Daily Uploads — Sessions available within 48 hours.",
-      "HD Quality — Professional videography & framing.",
-    ],
-    image: "/images/spot-3.jpg",
-  },
-  {
-    name: "Echo Beach",
-    title: "Echo Beach Canggu",
-    description:
-      "A powerful reef break delivering punchy, hollow waves and stunning sunsets.",
-    highlights: ["Barrel Sections", "Advanced Surfer Spot", "Sunset Sessions"],
-    image: "/images/spot-4.jpg",
-  },
-  {
-    name: "Sandbar",
-    title: "Sandbar Canggu",
-    description: "Perfect when conditions align. Fun, playful and photogenic.",
-    highlights: ["Fun Conditions", "Photo Friendly", "Consistent Peaks"],
-    image: "/images/spot-5.jpg",
-  },
-  {
-    name: "Rivermouth",
-    title: "Rivermouth Canggu",
-    description:
-      "A dynamic shifting break offering powerful sections during solid swell.",
-    highlights: ["Heavy Drops", "Fast Walls", "Advanced Only"],
-    image: "/images/spot-2.jpg",
-  },
+  name: "Batu Bolong",
+  title: "Batu Bolong",
+  description:
+    "A mellow longboard wave, popular with stylish surfers and a strong female lineup.",
+  highlights: ["Longboard Spot", "Smooth Waves", "Stylish Rides"],
+  image: "/images/spot-1.jpg",
+},
+{
+  name: "Old Man's",
+  title: "Old Man's",
+  description:
+    "A crowded beginner-friendly break with fun, slow waves and a social lineup.",
+  highlights: [
+    "Beginner Friendly",
+    "Party Waves",
+    "Crowded Lineup",
+  ],
+  image: "/images/spot-3.jpg",
+},
+{
+  name: "Echo Beach",
+  title: "Echo Beach",
+  description:
+    "A powerful reef break delivering punchy, hollow waves and stunning sunsets.",
+  highlights: ["Barrel Sections", "Advanced Spot", "Sunset Sessions"],
+  image: "/images/spot-4.jpg",
+},
+{
+  name: "Sandbar",
+  title: "Sandbar",
+  description:
+    "A fun and photogenic setup, known for its clean A-frame waves when conditions align.",
+  highlights: ["A-Frame Waves", "Photo Friendly", "Fun Conditions"],
+  image: "/images/spot-5.jpg",
+},
+{
+  name: "Rivermouth",
+  title: "Rivermouth",
+  description:
+    "A dynamic shifting break offering powerful sections during solid swell.",
+  highlights: ["Heavy Drops", "Fast Walls", "Advanced Only"],
+  image: "/images/spot-2.jpg",
+},
 ];
 
 export default function SurfBreaksSection() {

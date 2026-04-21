@@ -47,7 +47,7 @@ export default function Hero() {
 
                 <div className="mt-8 md:mt-10">
                   <Link
-                    href="#clips"
+                    href="https://wa.me/6285792835235"
                     className="
                       inline-flex items-center gap-3
                       border border-white/30

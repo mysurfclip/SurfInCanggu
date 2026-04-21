@@ -157,7 +157,7 @@ export default function Header() {
 
               {/* CTA mobile */}
               <a
-                href="#clips"
+                href="https://wa.me/6285792835235" target="_blank"
                 onClick={() => setIsMenuOpen(false)}
                 className="
                   mt-4 flex items-center justify-center gap-2.5

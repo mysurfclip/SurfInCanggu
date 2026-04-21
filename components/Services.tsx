@@ -143,7 +143,7 @@ export default function Services() {
                 </li>
               </ul>
               <Link
-                href="#clips"
+                href="https://wa.me/6285792835235" target="_blank"
                 className="inline-flex items-center gap-3 bg-primary-forest text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full uppercase text-xs sm:text-sm tracking-[1px] transition-all duration-300 hover:bg-accent-orange hover:scale-105 shadow-soft hover:shadow-premium w-fit"
               >
                 View Today's Surf Clips →
@@ -185,7 +185,7 @@ export default function Services() {
                 </li>
               </ul>
               <Link
-                href="https://wa.me/6285792835235"
+                href="https://wa.me/6285792835235" target="_blank"
                 className="inline-flex items-center gap-3 bg-primary-forest text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full uppercase text-xs sm:text-sm tracking-[1px] transition-all duration-300 hover:bg-accent-orange hover:scale-105 shadow-soft hover:shadow-premium w-fit"
               >
                 Book Your Lesson →
@@ -244,7 +244,7 @@ export default function Services() {
                 </li>
               </ul>
               <Link
-                href="https://wa.me/6285792835235"
+                href="https://wa.me/6285792835235" target="_blank"
                 className="inline-flex items-center gap-3 bg-primary-forest text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full uppercase text-xs sm:text-sm tracking-[1px] transition-all duration-300 hover:bg-accent-orange hover:scale-105 shadow-soft hover:shadow-premium w-fit"
               >
                 Get Your Custom Quote →
