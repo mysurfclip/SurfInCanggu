@@ -82,39 +82,42 @@ export default function Header() {
 
               {/* ================= CTA DESKTOP ================= */}
               
-              <button
-                className={`
-                  hidden lg:flex items-center gap-2.5
-                  px-6 py-2.5
-                  rounded-full
-                  transition-all duration-300
-                  group
-                  ${
-                    scrolled
-                      ? "bg-primary-forest text-white hover:bg-[#3d5f5a]"
-                      : "bg-white text-primary-forest hover:bg-primary-forest hover:text-white"
-                  }
-                `}
-              >
-                <span className="transition-transform duration-300 group-hover:-translate-x-1">
-                  Get Your Clips
-                </span>
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 21 21"
-                  fill="none"
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  <path
-                    d="M3 10.1662H17.3323M17.3323 10.1662L10.1662 3M17.3323 10.1662L10.1662 17.3323"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              <a
+  href="https://wa.me/6285792835235"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`
+    hidden lg:flex items-center gap-2.5
+    px-6 py-2.5
+    rounded-full
+    transition-all duration-300
+    group
+    ${
+      scrolled
+        ? "bg-primary-forest text-white hover:bg-[#3d5f5a]"
+        : "bg-white text-primary-forest hover:bg-primary-forest hover:text-white"
+    }
+  `}
+>
+  <span className="transition-transform duration-300 group-hover:-translate-x-1">
+    Get Your Clips
+  </span>
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 21 21"
+    fill="none"
+    className="transition-transform duration-300 group-hover:translate-x-1"
+  >
+    <path
+      d="M3 10.1662H17.3323M17.3323 10.1662L10.1662 3M17.3323 10.1662L10.1662 17.3323"
+      stroke="currentColor"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+</a>
 
               {/* ================= HAMBURGER BUTTON ================= */}
               <button
