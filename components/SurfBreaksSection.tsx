@@ -9,7 +9,7 @@ const slides = [
   description:
     "A mellow longboard wave, popular with stylish surfers and a strong female lineup.",
   highlights: ["Longboard Spot", "Smooth Waves", "Stylish Rides"],
-  image: "/images/batubolong.jpg",
+  image: "/images/batubolong.png",
 },
 {
   name: "Old Man's",
@@ -21,7 +21,7 @@ const slides = [
     "Party Waves",
     "Crowded Lineup",
   ],
-  image: "/images/spot-3.jpg",
+  image: "/images/oldmans.png",
 },
 {
   name: "Echo Beach",
@@ -29,7 +29,7 @@ const slides = [
   description:
     "A powerful reef break delivering punchy, hollow waves and stunning sunsets.",
   highlights: ["Barrel Sections", "Advanced Spot", "Sunset Sessions"],
-  image: "/images/spot-4.jpg",
+  image: "/images/echobeach.png",
 },
 {
   name: "Sandbar",
@@ -37,7 +37,7 @@ const slides = [
   description:
     "A fun and photogenic setup, known for its clean A-frame waves when conditions align.",
   highlights: ["A-Frame Waves", "Photo Friendly", "Fun Conditions"],
-  image: "/images/spot-5.jpg",
+  image: "/images/sandbar.png",
 },
 {
   name: "Rivermouth",
@@ -45,7 +45,7 @@ const slides = [
   description:
     "A dynamic shifting break offering powerful sections during solid swell.",
   highlights: ["Heavy Drops", "Fast Walls", "Advanced Only"],
-  image: "/images/spot-2.jpg",
+  image: "/images/rivermouth.png",
 },
 ];
 
