@@ -156,9 +156,13 @@ export default function LiveUpdates() {
   const spots = metadata?.spots || [];
   const videos = metadata?.videos || {};
   const spotsWithVideo = spots.filter(s => videos[s.code]).length;
-const filteredSpots = activeFilter 
-  ? spots.filter(s => s.code === activeFilter) 
-  : spots.filter(s => videos[s.code]);
+  const filteredSpots = spots
+    .filter(s => videos[s.code])
+    .sort((a, b) => {
+      const dateA = new Date(videos[a.code].uploaded_at).getTime();
+      const dateB = new Date(videos[b.code].uploaded_at).getTime();
+      return dateB - dateA;
+    });
   
   return (
     <section id="live-updates" className="bg-neutral-cream overflow-hidden scroll-mt-24" aria-labelledby="daily-clips-heading">
