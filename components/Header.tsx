@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { trackEvent } from "@/app/utils/analytics";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
@@ -86,6 +87,7 @@ export default function Header() {
   href="https://wa.me/6285792835235"
   target="_blank"
   rel="noopener noreferrer"
+  onClick={() => trackEvent('contact_click', { contact_method: 'whatsapp', source: 'header_desktop' })}
   className={`
     hidden lg:flex items-center gap-2.5
     px-6 py-2.5
@@ -161,8 +163,13 @@ export default function Header() {
 
               {/* CTA mobile */}
               <a
-                href="https://wa.me/6285792835235" target="_blank"
-                onClick={() => setIsMenuOpen(false)}
+                href="https://wa.me/6285792835235"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  trackEvent('contact_click', { contact_method: 'whatsapp', source: 'header_mobile' });
+                  setIsMenuOpen(false);
+                }}
                 className="
                   mt-4 flex items-center justify-center gap-2.5
                   bg-primary-forest text-white
