@@ -22,7 +22,6 @@ export default function ClipCard({ clip }: ClipCardProps) {
           clip_title: clip.title
         })}
       >
-      >
         {/* ================= THUMBNAIL ================= */}
         <div className="relative aspect-[16/10] overflow-hidden rounded-t-xl2">
 
