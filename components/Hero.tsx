@@ -53,7 +53,6 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     onClick={() => trackEvent('contact_click', { contact_method: 'whatsapp', source: 'hero' })}
                     className="
-                    className="
                       inline-flex items-center gap-3
                       border border-white/30
                       px-8 py-4
