@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { trackEvent } from "@/app/utils/analytics";
 
 export default function Hero() {
   return (
@@ -48,6 +49,10 @@ export default function Hero() {
                 <div className="mt-8 md:mt-10">
                   <Link
                     href="https://wa.me/6285792835235"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackEvent('contact_click', { contact_method: 'whatsapp', source: 'hero' })}
+                    className="
                     className="
                       inline-flex items-center gap-3
                       border border-white/30
