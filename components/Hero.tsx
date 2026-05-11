@@ -52,15 +52,13 @@ export default function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackEvent('contact_click', { contact_method: 'whatsapp', source: 'hero' })}
-                    className="
-                      inline-flex items-center gap-3
+                    className="inline-flex items-center gap-3
                       border border-white/30
                       px-8 py-4
                       rounded-full
                       text-white
                       transition-all duration-300
-                      hover:bg-white hover:text-primary-forest
-                    "
+                      hover:bg-white hover:text-primary-forest"
                   >
                     <span className="text-bodyBase">
                       Get Your Clips
