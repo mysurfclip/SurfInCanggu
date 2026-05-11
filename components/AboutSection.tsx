@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { trackEvent } from '@/app/utils/analytics';
 import Link from 'next/link';
 
 export default function AboutSection() {
@@ -91,6 +92,9 @@ export default function AboutSection() {
                 <div className="text-label text-neutral-textTertiary mb-4">Get in Touch</div>
                 <Link
                   href="https://wa.me/6285792835235"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('contact_click', { contact_method: 'whatsapp', source: 'about' })}
                   className="flex justify-between items-center border-b border-neutral-border pb-3 text-primary-forest hover:text-accent-orange transition"
                 >
                   <span className="text-bodyBase">WhatsApp</span>
@@ -101,6 +105,7 @@ export default function AboutSection() {
                 <div className="text-label text-neutral-textTertiary mb-4">Get Your Clips</div>
                 <Link
                   href="#clips"
+                  onClick={() => trackEvent('click_gallery', { image_id: 'clipdays_link', photographer: 'Luqman', source: 'about' })}
                   className="flex justify-between items-center border-b border-neutral-border pb-3 text-primary-forest hover:text-accent-orange transition"
                 >
                   <span className="text-bodyBase">View on ClipDays</span>
