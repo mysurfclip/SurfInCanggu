@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { trackEvent } from '@/app/utils/analytics';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -81,6 +82,7 @@ export default function Footer() {
                   href="https://wa.me/6285792835235"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('contact_click', { contact_method: 'whatsapp', source: 'footer' })}
                   className="group border border-white/15 hover:border-white rounded-xl px-5 py-4 transition"
                 >
                   <div className="flex justify-between items-center">
@@ -103,6 +105,7 @@ export default function Footer() {
                   href="https://www.instagram.com/surfingincanggu/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('social_click', { platform: 'instagram', source: 'footer' })}
                   className="group border border-white/15 hover:border-white rounded-xl px-5 py-4 transition"
                 >
                   <div className="flex justify-between items-center">
