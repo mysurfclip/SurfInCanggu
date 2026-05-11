@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { trackEvent } from '@/app/utils/analytics'
 import type { Clip } from '@/lib/types'
 
 interface ClipCardProps {
@@ -16,6 +17,11 @@ export default function ClipCard({ clip }: ClipCardProps) {
         href={clip.videoUrl ?? '#'}
         className="block bg-neutral-cream rounded-xl2 overflow-hidden transition-all duration-300 hover:shadow-soft"
         aria-label={`Watch clip: ${clip.title}`}
+        onClick={() => trackEvent('click_gallery', {
+          image_id: clip.videoUrl ?? 'unknown',
+          clip_title: clip.title
+        })}
+      >
       >
         {/* ================= THUMBNAIL ================= */}
         <div className="relative aspect-[16/10] overflow-hidden rounded-t-xl2">
